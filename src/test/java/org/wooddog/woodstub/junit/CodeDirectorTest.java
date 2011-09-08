@@ -5,12 +5,11 @@
  * All rights reserved                                                        *
  ******************************************************************************/
 
-package org.wooddog.woodstub.builder.test.test;
+package org.wooddog.woodstub.junit;
 
 import junit.framework.TestCase;
 import org.junit.Test;
-import org.wooddog.woodstub.junit.CodeDirector;
-import org.wooddog.woodstub.junit.CodeDirectorException;
+import org.wooddog.woodstub.builder.test.test.DataBase;
 
 
 public class CodeDirectorTest extends TestCase {
@@ -18,7 +17,7 @@ public class CodeDirectorTest extends TestCase {
     public void testCode() throws CodeDirectorException {
         CodeDirector dir = CodeDirector.getInstance();
         CodeDirector.clearCache();
-        String code = dir.buildCode(DataBase.class);        
+        String code = dir.buildCode(DataBase.class);
         assertEquals(1,CodeDirector.cacheSize());
         String newCode = dir.buildCode(DataBase.class);
         assertEquals(1,CodeDirector.cacheSize());

@@ -5,18 +5,16 @@
  * All rights reserved                                                        *
  ******************************************************************************/
 
-package org.wooddog.woodstub.assertionpoint;
+package org.wooddog.woodstub.junit;
 
 import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.runner.RunWith;
+import org.wooddog.woodstub.assertionpoint.AssertionHead;
+import org.wooddog.woodstub.assertionpoint.AssertionPoint;
+import org.wooddog.woodstub.assertionpoint.AssertionPointCreator;
 import org.wooddog.woodstub.assertionpoint.proxy.ProxyCreator;
-import org.wooddog.woodstub.junit.CodeDirector;
-import org.wooddog.woodstub.junit.StubEvent;
-import org.wooddog.woodstub.junit.StubListener;
-import org.wooddog.woodstub.junit.WoodRunner;
-
 import java.util.LinkedList;
 import java.util.List;
 

@@ -22,7 +22,7 @@ import java.util.Map;
 /**
  * This class directs the building of a Java code file using Builder-implementations.
  */
-public class CodeDirector {
+class CodeDirector {
 
     private static final int MAX_CLASSES = 50;
     //Used for saving generated stub-code, so we don't have to generate it several times.
