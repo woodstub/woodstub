@@ -1,553 +1,2264 @@
-﻿<!DOCTYPE html>
-<html>
-	<head>
-  
-		<meta charset='utf-8'>
-		<title>woodstub/woodstub @ GitHub</title>
+﻿<html>
 
-		<style type="text/css">
-   
-		 body {
-		      margin-top: 1.0em;
-		      background-color: #eaddcd;
-		      font-family: Helvetica, Arial, FreeSans, san-serif;
-		      color: #000000;
-	      }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #152232; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #152232; }
-    h3 { text-align: center; color: #152232; }
-    a { color: #152232; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 12 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Narkisim;
+	panose-1:2 14 5 2 5 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:24.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria","serif";
+	color:#365F91;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:10.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Cambria","serif";
+	color:#4F81BD;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:10.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Cambria","serif";
+	color:#4F81BD;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:11.0pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:22.0pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:36.0pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:36.0pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:24.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria","serif";
+	color:#365F91;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Cambria","serif";
+	color:#365F91;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Cambria","serif";
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Cambria","serif";
+	color:#4F81BD;
+	font-weight:bold;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma","sans-serif";}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:3.0cm 2.0cm 3.0cm 2.0cm;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
 </head>
 
-<body>
-  <a href="http://github.com/woodstub/woodstub"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+<body lang=DA link=blue vlink=purple>
 
-  <div id="container">
+<div class=WordSection1>
 
-    <div class="download">
-      <a href="http://github.com/woodstub/woodstub/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/woodstub/woodstub/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-    </div>
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
 
-    <h1><a href="http://github.com/woodstub/woodstub">woodstub</a>
-      <span class="small">by <a href="http://github.com/woodstub">woodstub</a></span></h1>
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
 
-    <div class="description">
-      Stubbing framework for java
-    </div>
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:72.0pt;line-height:115%'>&nbsp;</span></p>
 
-    <h2>Authors</h2>
-<p>dencbr (cbr@fujitsu.dk)
-<br/>denasa (asa@fujitsu.dk)
-<br/>
-<br/>      </p>
-<h2>Contact</h2>
-<p>Claus Brøndby Reimer (clausreimer@hotmail.com)
-<br/>Asbjørn Andersen (asa@fujitsu.dk)
-<br/>      </p>
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:72.0pt;line-height:115%'>Woodstub</span></p>
 
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:10.0pt;line-height:115%'>A stubbing tool developed by: <br>
+Claus Brøndby Reimer<br>
+&amp;<br>
+Asbjørn Andersen</span></p>
 
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/woodstub/woodstub/zipball/master">zip</a> or
-      <a href="http://github.com/woodstub/woodstub/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/woodstub/woodstub</pre>
-    </p>
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:10.0pt;line-height:115%'>&nbsp;</span></p>
 
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/woodstub/woodstub">woodstub/woodstub</a>
-    </div>
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:10.0pt;line-height:115%'>&nbsp;</span></p>
 
-  </div>
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:10.0pt;line-height:115%'>&nbsp;</span></p>
 
-<pre>
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:10.0pt;line-height:115%'>&nbsp;</span></p>
 
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:48.0pt;line-height:115%'>Official Documentation<br>
+</span><span lang=EN-US style='font-size:16.0pt;line-height:115%'>0.1</span><span
+lang=EN-US><br clear=all style='page-break-before:always'>
+</span></p>
 
-Woodstub
-A stubbing tool developed by: 
-Claus Brøndby Reimer
-&
-Asbjørn Andersen
+<p class=MsoTocHeading><span lang=EN-US>Table of Contents</span></p>
 
+<p class=MsoToc1><a href="#_Toc303270663"><span lang=EN-US>Preface</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
 
+<p class=MsoToc2><a href="#_Toc303270664"><span lang=EN-US>Why </span>Bother<span
+lang=EN-US> With Woodstub?</span><span style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
 
+<p class=MsoToc2><a href="#_Toc303270665"><span lang=EN-US>The Limitations of
+Extensive DI</span><span style='color:windowtext;display:none;text-decoration:
+none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
 
-Official Documentation
-0.1 
-Table of Contents
-Preface	4
-Why Bother With Woodstub?	4
-The Limitations of Extensive DI	5
-The Advantages of Woodstub	7
-The Limitations of Woodstub	8
-Getting Started With Woodstub	9
-Introduction	9
-What Lies Ahead	9
-What to Expect	9
-Stubbing Without Configuration	10
-Scenario	10
-The Fast Way	10
-What Actually Happens	10
-Stubbing With Predefined Behavior – Return Values	11
-Scenario	11
-The Fast Way	11
-What Actually Happens	11
-Stubbing With Predefined Behavior – Exceptions	12
-Scenario	12
-The Fast Way	12
-What Actually Happens	12
-Stubbing With Predefined Behavior – Advanced Behavior	13
-Scenario	13
-The Fast Way	13
-What Actually Happens	13
-Putting It All Together	14
-Introduction	14
-Code Example	14
-Getting Technical with Woodstub	16
-Introduction	16
-What to Expect	16
-What Lies Ahead	16
-Using WoodTestCase	17
-What it is	17
-Stubs (annotation)	17
-Excludes(annotation)	17
-Handling AssertionPoints	17
-Stubbing Interfaces	18
-Using Assertion Points	19
-What it is	19
-AssertionPointCreator (class)	19
-AssertionHead (class)	19
-AssertionBody (class)	20
-Woodstub Core	21
-What it is	21
-WoodRunner (class)	21
+<p class=MsoToc2><a href="#_Toc303270666"><span lang=EN-US>The Advantages of
+Woodstub</span><span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
 
+<p class=MsoToc2><a href="#_Toc303270667"><span lang=EN-US>The Limitations of
+Woodstub</span><span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>8</span></a></p>
 
+<p class=MsoToc1><a href="#_Toc303270668"><span lang=EN-US>Getting Started With
+Woodstub</span><span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>9</span></a></p>
 
- 
-Preface
-Why Bother With Woodstub?
-Why, oh why, would anyone bother with making yet another framework for making stubs/mocks? While there are several open source frameworks treading roughly the same ground, Woodstub belongs to a category which only few have explored. 
-To understand the significance it is important to look at the history of unit testing. The need for making stub implementations of classes to get rid of dependencies has always been there, but the tools for making stubs gained massive strength when Java got the Proxy feature. This allowed developers to define stub-implementations of interfaces on the fly, which was certainly a big step forward from doing it manually. These tools had the limitations that in order to stub a dependency, it had to implement an interface and the class under test needed to allow for the stubs to be inserted.
-As this was the only easy way to stub dependencies, a wave started rolling about how it was not only required by these tools to have an interface for every dependency; it was actually the only way to code well. The argument is circular, though, because the reasoning for why this was supposedly the only way to go, was “It is the only way to test with stubs”.
-The illusion of “everything must implement an interface” started to shatter as stubbing-tools gained the ability to make stubs of concrete classes. Some elitists have chosen to ignore this fact, while others simply state that “stubbing without interfaces is not nice”. What both groups do to seem to agree on, is that dependency injection (DI) is still an absolute good, and the only way to make a good software design. The reasoning remains the same.
-Java has now evolved to a point where it is possible to make stubs without DI, which is what Woodstub does, and yet again a large part of the developing community refuse to believe in anything but “the grand truth”. But the reality is that Woodstub sets the developer free from technology-enforced dogmas to design and test software in the way that fits with the individual requirement, not just what the tool dictates. 
-It is the Woodstub philosophy that the developer should tell the tool what to do, not the other way around. Technical limitations are just that: Limitations. They should not be made into dogmas.  
-The Limitations of Extensive DI
-It is of course common that any pattern taken to extremes will result in pitfalls, but in the case of DI these pitfalls seem to have been sugar coated and largely ignored, which is why this entire section is dedicated to the subject.
-It has been vastly popular to hide the actual consequences of DI behind frameworks that handle the injections behind the scenes. But the reality is that DI used to the extent of the current trends, is just a sugar coated way of breaking encapsulation – one of the cornerstones in Object Oriented Programming.
-Imagine the following code:
-public class House {
-   private BathRoom bathRoom;
-   private LivingRoom livingRoom;
-   public House() {
-       bathroom = new BathRoom();
-       livingRoom = new LivingRoom();
-   }   
-}
+<p class=MsoToc2><a href="#_Toc303270669"><span lang=EN-US>Introduction</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>9</span></a></p>
 
-public class BathRoom {
-   private Bath bath;
-   public BathRoom() {
-      bath = new Bath();
-   }
-}
+<p class=MsoToc3><a href="#_Toc303270670"><span lang=EN-US>What Lies Ahead</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>9</span></a></p>
 
-public class LivingRoom {
-    private Lamp lamp;
-    public LivingRoom() {
-       lamp = new Lamp();
-    }
-}
+<p class=MsoToc3><a href="#_Toc303270671"><span lang=EN-US>What to Expect</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>9</span></a></p>
 
-//Bath and Lamp contain nothing…
-This is a design that follows the traditional object oriented principles where each class encapsulates its inner structure. To use the House-object no knowledge of its dependencies are needed. However, this is considered to be a bad and untestable design by the DI-elitists who would rather have the structure like this:
-public class House {
-   private BathRoom bathRoom;
-   private LivingRoom livingRoom;
+<p class=MsoToc2><a href="#_Toc303270672"><span lang=EN-US>Stubbing Without
+Configuration</span><span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>10</span></a></p>
 
-   public House(BathRoom bathRoom, LivingRoom livingRoom) {
-       this.bathroom = bathRoom;
-       this.livingRoom = livingRoom;
-   }   
-}
+<p class=MsoToc3><a href="#_Toc303270673"><span lang=EN-US>Scenario</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>10</span></a></p>
 
-public class BathRoom {
-   private Bath bath;
-   public BathRoom(Bath bath) {
-      this.bath = bath;
-   }
-}
-public class LivingRoom {
-    private Lamp lamp;
-    public LivingRoom(Lamp lamp) {
-       this.lamp = lamp;
-    }
-}
+<p class=MsoToc3><a href="#_Toc303270674"><span lang=EN-US>The Fast Way</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>10</span></a></p>
 
-If an interface-elitist had written it, every concrete class would most likely have the famous “Impl” at the end of the name, and of course double the amount of files, but that would take up to much space to demonstrate here. 
-What this design does, is to expose every single part of the system. To use the House-object, suddenly knowledge of every single class required. This would be the code needed to construct the House-object in one line: 
-new House(new BathRoom(new Bath(), new LivingRoom(new Lamp());
-This would turn into a really long line of constructor-calls if the rooms and/or inventory got more dependencies, and why does the class that uses the House-class need to know all this?
-It is of course possible to hide this ugly construction behind the walls of an IoC-framework, but really, is that not just a way of obfuscating the code to hide a poor design? And on top of that, why make a design based on technical requirements that are not even relevant anymore?
-This is not to defame DI as a concept, since it has its uses, i.e. when it is appropriate! That would be for having any kind of plug-in construction or objects that require vast configuration, but surely it should not be necessary to inject close to the entire architecture, which is what seems to be the trend.
- 
-The Advantages of Woodstub
-Why should anyone use Woodstub? Here is a list of advantages:
-•	Wide ranged stubbing abilities. Woodstub goes where other frameworks stop. This includes:
-o	Singletons, an especially dreaded design pattern for its lack of “mockability”.
-o	Static methods
-o	Private methods
-•	No intrusion on the software-architecture. There is no need for injection – classes are stubbed when you select them to be. Write the code like you want it to be, and leave it to Woodstub to isolate dependencies.
-•	Simple syntax – no need for “replay”, “verify” or the likes. Your tests look like normal code, and the stubs are quick and easy to define. In fact, dependencies often do not need special behavior – when they are stubbed, they are out of the way.
-•	Excellent for legacy code – chop up the spaghetti dependencies!
-•	Also supports interface-proxies – the technique of the common stubbing/mocking frameworks
- 
-The Limitations of Woodstub
-There are, of course, limitations to what Woodstub can do and to the way it works. Since this document is not intended to hide such things, here are the most obvious ones:
-•	JDK-classes cannot be stubbed
-o	This is due to a hardcoded restriction in the JDK, which prevents JDK-classes to be swapped.
-o	Although this would be a nice feature, it will hardly be necessary for most projects.
-•	Method names are written as Strings
-o	Yes, it looks much better when actual method calls are used, like when(someClass.someCall()).doStuff()
-but the frameworks that use this syntax also suffer from the fact that void-methods need a separate approach, which makes the String-syntax more consistent.
-o	The best approach would be a consistent syntax with method-calls, which does not seem to be possible yet. 
-•	Some frameworks do not like when you mess with the class loader, which makes it necessary to exclude them in the test class.
-o	This is a downside of the class loader technique. It is possible to manually define exclusions, which fortunately solves most of those problems, when they occur.
- 
-Getting Started With Woodstub
-Introduction
-What Lies Ahead
-This section describes the easiest way to start making unit tests with Woodstub. Each chapter describes a scenario related to a topic, followed by a description on how to test that scenario with Woodstub, and finishing off with an explanation of what is actually going on.
-The final chapter is a complete code example of a Woodstub unit test matching the covered topics.
-What to Expect
-As the title suggests, this is not intended as a deep and detailed technical description of every detail in Woodstub. It is, however, the intention that the reader should be able to write tests with Woodstub after reading the document and know the basics of what the code does.
-The document can be used as a lookup reference, but it is recommended to the read the chapters in sequence at least once.
- 
-Stubbing Without Configuration
-Scenario
-A class MyClass has the following method:
-public  void performMessageLogic(String message) {
-   new MessageSender(“someUrl”).send(message);
-   //More content
-}
-In the test MessageSender should be stubbed, so any URL-configuration is out of the way
-The Fast Way
-1.	Extend WoodTestCase to gain access to a lot of shortcuts.
-2.	Add the annotation @Stubs(MessageSender.class)
-3.	Write and run the test of MyClass
-All done!
-What Actually Happens
-1.	WoodTestCase contains the @RunWith(WoodRunner.class) annotation, which is required to use Woodstub.
+<p class=MsoToc3><a href="#_Toc303270675"><span lang=EN-US>What Actually Happens</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>10</span></a></p>
 
-2.	The @Stubs annotation marks the classes that should be stubbed. The WoodRunner will generate stub-versions of these classes, compile them and swap them with the original ones in the class loader. No injection is needed!
+<p class=MsoToc2><a href="#_Toc303270676"><span lang=EN-US>Stubbing With
+Predefined Behavior – Return Values</span><span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>11</span></a></p>
 
-3.	When running within the test, MyClass will automatically use the stub-version of MessageSender, which will do nothing at this point. Therefore the configuration doesn’t matter.
- 
-Stubbing With Predefined Behavior – Return Values
-Scenario
-The invocation of MessageSender has been changed to this:
-If ( new MessageSender(“someUrl”).send(message)) {
-   //Content
-} else {
-   throw new MessagingFailedException(“Something failed!”);
-}
-The test should be adapted to match.
-The Fast Way
-1.	Add the following  code before the actual test code:
-behaveAs(MessageSender.class).toCall(“send”).andReturn(true);
-2.	To test the else-part of the conditional, repeat the test, but without the code from step 1.
-All done!
-What Actually Happens
-1.	Each method in the generated stub-class performs a callback to WoodRunner.
-WoodRunner has a collection of StubListener-implementations that will be invoked on each call.
-WoodStub includes a utility called AssertionPoint, which is a simpler way of creating StubListener-implementations.
-WoodTestCase includes some shortcuts for adding AssertPoints along with its own logic for containing these.
-AssertionPoints are created in steps: 
-a.	First step is the actual creation, which is done with behaveAs(class). This tells the point to look for operations on that class. 
-b.	The second step defines the method to listen for, by getting the name as a parameter. 
-c.	The last step defines what should happen in the method. This scenario calls for a return value, which can be provided by calling .andReturn(value) 
-To sum up: The AssertionPoint created in the example above makes sure that any instance of MessageSender will always return ‘true’, when the method “send” is invoked.
+<p class=MsoToc3><a href="#_Toc303270677"><span lang=EN-US>Scenario</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>11</span></a></p>
 
-2.	When no return value has been defined, a default value will be used. The default for numbers is 0, for booleans it is ‘false’ and for non-primitives it is ‘null’. Therefore, the other part of the conditional can be tested by simply not defining a return value in that test.
-As an alternative, the method clearPoints() (from WoodTestCase) can be used. It will erase all defined AssertionPoints.
+<p class=MsoToc3><a href="#_Toc303270678"><span lang=EN-US>The Fast Way</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>11</span></a></p>
 
- 
-Stubbing With Predefined Behavior – Exceptions
-Scenario
-The invocation of MessageSender has yet again been changed:
-try {
-   If ( new MessageSender(“someUrl”).send(message)) {
-      //Content
-   } else {
-      throw new MessagingFailedException(“Something failed!”);
-   }
-} catch (MessageSendingException e) {
-   //Some logging
-   throw new MessagingFailedException(e);
-}
-This new exception-handling must also be tested.
-The Fast Way
-1.	Add the following  code before the actual test code:
-behaveAs(MessageSender.class).toCall(“send”).andThrow(new MessageSendingException(“test”));
-All done!
-What Actually Happens
-1.	The provided exception is saved within the AssertionPoint until the method is invoked. Then it is set as a return parameter in the callback-method.
-The generated stub-code checks if the exception-parameter has been set, and if so, throws it.
-If the exception does not match the method signature, a Woodstub-specific exception will be thrown instead.
- 
-Stubbing With Predefined Behavior – Advanced Behavior
-Scenario
-The following code has been added to MyClass:
-If (messageSender.sentMessagesCount()>5) {
-   throw new TooManyMessagesException(“You have sent too many messages!”);
-}
-The test should verify that a total of 5 messages can be sent before the exception is thrown.
-The Fast Way
-1.	Add this code: 
-behaveAs(MessageSender.class).toCall(“sentMessagesCount”).andDelegateTo(new StubListener() { public void invoked(StubEvent event) {
-   //TODO…
-}};
-2.	Add an integer field to the class called messageCount, and initialize it to zero.
-3.	Inside the StubListener-implementation (TODO…), add this:
-messageCount++;
-event.setResult(messageCount);
-All done!
-What Actually Happens
-1.	The AssertionPoint gets a reference to a StubListener-implementation, which is an alternative to providing a return value. StubListener is the core of the callback-logic in Woodstub, and any implementation can be registered as a listener, but when done through the AssertionPoint, the implementation will only be called when the matching method is invoked. When done manually, the developer needs to check method and class names before handling the event.
-It is of course also possible to have the StubListener as a separate class, and, as an added bonus the AssertionPoint can receive just the class instead of an object, and instantiate it behind the scenes.
+<p class=MsoToc3><a href="#_Toc303270679"><span lang=EN-US>What Actually
+Happens</span><span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>11</span></a></p>
 
-2.	When doing anonymous implementations, it can sometimes be necessary to do some extra “juggling” when it comes to manipulating fields, like adding setters and getters.
+<p class=MsoToc2><a href="#_Toc303270680"><span lang=EN-US>Stubbing With
+Predefined Behavior – Exceptions</span><span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>12</span></a></p>
 
-3.	The StubEvent object is really the key to defining stub-behavior. This object gives access to the method parameters as well as the return value, which is set with setResult. An exception can also be provided for the stub class to throw.
- 
-Putting It All Together
-Introduction
-The following is an example of how to create a test class, using the above scenarios. After reading the previous chapters it should hopefully be clear what is going on. It is only intended to demonstrate the Woodstub-functionality, not necessarily to show a prime example of a test class.
-Code Example
-@Stubs(MessageSender)
-public class MyClassTest extends WoodTestCase {
-   private MyClass myClass;
-   private int messagesCount;
+<p class=MsoToc3><a href="#_Toc303270681"><span lang=EN-US>Scenario</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>12</span></a></p>
 
-   @Before
-   public void setup() {
-      myClass = new MyClass();
-      messagesCount=0;
-   }
-   @Test
-   public void testSuccesfullSend() {
-      behaveAs(MessageSender.class).toCall(“send”).andReturn(true);
-      myClass.performMessageLogic(“”);
-   }
-@Test
-public void testFailingSend() {
-   try {
-      myClass.performMessageLogic(“”);
-      fail(“Expected exception”);
-   catch (MessageSendingException e) {
-   }
-}
-@Test
-Public void testExceptionFromSender() {
-   behaveAs(MessageSender.class).toCall(“send”).andThrow(new FailedMessagingException(“Test”));
-   try {
-      myClass.performMessageLogic(“”);
-      fail(“Expected exception”);
-   catch (MessageSendingException e) {
-   }
-}
+<p class=MsoToc3><a href="#_Toc303270682"><span lang=EN-US>The Fast Way</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>12</span></a></p>
 
+<p class=MsoToc3><a href="#_Toc303270683"><span lang=EN-US>What Actually
+Happens</span><span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>12</span></a></p>
 
+<p class=MsoToc2><a href="#_Toc303270684"><span lang=EN-US>Stubbing With
+Predefined Behavior – Advanced Behavior</span><span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>13</span></a></p>
 
-(continued)
-@Test
-public void testMessageCount() {
-   behaveAs(MessageSender.class).toCall(“send”).andReturn(true);
-   behaveAs(MessageSender.class).toCall(“sentMessagesCount”).andDelegateTo(new StubListener() { 
-          public void invoked(StubEvent event) {
-            messageCount++;
-            event.setResult(messageCount);
-         }};
+<p class=MsoToc3><a href="#_Toc303270685"><span lang=EN-US>Scenario</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>13</span></a></p>
 
-   for (int i=0;i<5;i++) {
-       myClass.performMessageLogic(“”);
-   }
+<p class=MsoToc3><a href="#_Toc303270686"><span lang=EN-US>The Fast Way</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>13</span></a></p>
 
-  try {
-      myClass.performMessageLogic(“”);
-       fail(“Expected an exception”);
-   } catch (MessageSendingException e) {}
-}
- 
-Getting Technical with Woodstub
-Introduction
-What to Expect
-This section concerns itself with the three main components that can be used in Woodstub:
-•	WoodTestCase – The template test class.
-•	Assertion Point – The tool for defining stubs with ease.
-•	Woodstub Core – The heart of Woodstub
-What Lies Ahead
-Each of the following chapters starts with a description of the component, followed by a description of the public methods in the contained classes, along with an example of the usage. Since WoodTestCase is only one class, it will describe the contained methods sorted by subject.
-Methods from interfaces that are not intended to be invoked by users are not described.
- 
-Using WoodTestCase
-What it is
-WoodTestCase is an abstract class which contains a lot of helper methods and behind-the-scenes logic. It also sets up the @RunWith annotation, which ensures that JUnit will actually use Woodstub.
-Extending WoodTestCase is the absolute fastest way to start testing with Woodstub.
-The methods described in the section about AssertionPoint can all be used through WoodTestCase.
-Stubs (annotation)
-Name	Description	Example Usage
-@Stubs	This class-annotation is always required, regardless of how Woodstub is used. Although the annotation can be inherited, so it is possible to have a set of default stubs in a super class.	@Stubs({Car.class,Pedestrian.class})
-public class MyTestClass extends WoodTestCase {
-   //….
-}
-Excludes(annotation)
-Name	Description	Example Usage
-@Excludes	This class-annotation is used to manually define what classes should not be loaded by Woodstub’s class loader. It is used for resolving classloader issues that can occur when stubbing close to third part frameworks.
-Exclusions are defined as Strings and can use wildcard (*).
-Note that using this annotation will override the predefined exclusions in Woodstub. These will need to be added as well (primarily “java.*”).	@Excludes({“java.*”}
-@Stubs({Car.class,Pedestrian.class})
-public class MyTestClass extends WoodTestCase {
-   //….
-}
+<p class=MsoToc3><a href="#_Toc303270687"><span lang=EN-US>What Actually
+Happens</span><span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>13</span></a></p>
 
-Handling AssertionPoints 
-Name	Description	Example Usage
-behaveAs(Class)	Creates a new non-verifying AssertionPoint, and adds it to the list of AssertionPoints contained in WoodTestCase.
-When a method is invoked, the points in the list will be notified.
-In order to be useful, the Assertion-chain needs to be completed.	behaveAs(Car.class).toCall(“isOpen”).andReturn(true);
+<p class=MsoToc2><a href="#_Toc303270688"><span lang=EN-US>Putting It All
+Together</span><span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>14</span></a></p>
 
-Name	Description	Example Usage
-expect(Class)	Virtually the same as “behaveAs” except that it creates a verifying AssertionPoint, which will fail if the next call doesn’t match its specified class and method.
-Return type is not part of the validation.	behaveAs(Car.class).toCall(“isOpen”).andReturn(true);
+<p class=MsoToc3><a href="#_Toc303270689"><span lang=EN-US>Introduction</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>14</span></a></p>
 
-Name	Description	Example Usage
-addListener (Class,String,Listener)
-+ overload
-(String,String,Listener)	A different way of adding  a delegating AssertionPoint, which is mostly there for nostalgic reasons. The provided Listener-object will be invoked when the point is notified.
-These two methods primarily exist for nostalgic reasons and backwards compatibility.	addListener(Car.class,“isOpen”,carListener);
-addListener(“com.allcars.model.Car”,“isOpen”,carListener);
+<p class=MsoToc3><a href="#_Toc303270690"><span lang=EN-US>Code Example</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>14</span></a></p>
 
+<p class=MsoToc1><a href="#_Toc303270691"><span lang=EN-US>Getting Technical
+with Woodstub</span><span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>16</span></a></p>
 
-Name	Description	Example Usage
-clearPoints()	This method is used for removing all registered AssertionPoints. By default this is done automatically after each test, but if it is necessary to clear them in the middle of a test, this method makes it possible.	behaveAs(Car.class).toCall(“isOpen”).andReturn(true);
-//Do test…
-clearPoints();
-behaveAs(Car.class).toCall(“isOpen”).andReturn(false);
-//Test more…
+<p class=MsoToc2><a href="#_Toc303270692"><span lang=EN-US>Introduction</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>16</span></a></p>
 
-Name	Description	Example Usage
-cleanUpPoints()	This method is similar to clearPoints, except that it will make all points clear their references before they are removed.
-By default this happens automatically after each test.	behaveAs(Car.class).toCall(“isOpen”).andReturn(true);
-//Do test…
-cleanUpPoints();
-behaveAs(Car.class).toCall(“isOpen”).andReturn(false);
-//Test more…
+<p class=MsoToc3><a href="#_Toc303270693"><span lang=EN-US>What to Expect</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>16</span></a></p>
 
-Stubbing Interfaces
-Name	Description	Example Usage
-stub(class)	This method creates a Proxy-implementation of an interface. This is useful when testing a class that requires injection with an interface.
-The proxy implementation will use the same callback-logic as the normal stub classes, so AssertionPoint can be used to define specific behavior, although it (obviously) cannot return a new instance or send to the real class.
-If the provided class is not an interface, an exception will be raised.	ICar car = stub(ICar.class);
-behaveAs(ICar.class).toCall(“isOpen”).andReturn(true);
+<p class=MsoToc3><a href="#_Toc303270694"><span lang=EN-US>What Lies Ahead</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>16</span></a></p>
 
- 
-Using Assertion Points
-What it is
-An AssertionPoint is an advanced implementation of the StubListener interface. It allows for defining stub behavior with minimal lines of code, while still having a nice and readable syntax.
-There are three parts in an AssertionPoint:
-1.	AssertionHead – constructs the body by selecting the type of method call to react on. This is also the only part of an AssertionPoint which is a StubListener.
-2.	AssertionBody – constructs the tail by defining how to react on a method
-3.	AssertionTail – can do nothing as this is the end of the AssertionPoint-chain.
-The AssertionHead is created with AssertionPointCreator. WoodTestCase effectively hides the AssertionPointCreator, as seen in the previous section.
-AssertionPointCreator (class)
-Name	Description	Example Usage
-behaveAs	Creates an AssertionHead which does not perform validation.	AssertionCreator.behaveAs(Car.class);
+<p class=MsoToc2><a href="#_Toc303270695"><span lang=EN-US>Using WoodTestCase</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>17</span></a></p>
 
-Name	Description	Example Usage
-expect	Creates an AssertionHead which will perform validation	AssertionCreator.expect(Car.class);
+<p class=MsoToc3><a href="#_Toc303270696"><span lang=EN-US>What it is</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>17</span></a></p>
 
-AssertionHead (class)
-Name	Description	Example Usage
-toCall(String)	Sets up an AssertionBody to check for a method by the given name.	AssertionCreator.behaveAs(Car.class).toCall(“isOpen”);
+<p class=MsoToc3><a href="#_Toc303270697"><span lang=EN-US>Stubs (annotation)</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>17</span></a></p>
 
-Name	Description	Example Usage
-toCallConstructor()	Sets up an AssertionBody to check for the constructor being called.
-This is most useful when doing an AssertionPoint with validation.	AssertionCreator.expect(Car.class).
-toCallConstructor();
+<p class=MsoToc3><a href="#_Toc303270698"><span lang=EN-US>Excludes(annotation)</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>17</span></a></p>
 
-Name	Description	Example Usage
-toCallAnyMethod()	Sets up an AssertionBody to react when any method on the class is invoked. This is also useful when doing an AssertionPoint with validation, if a step should be bypassed.	AssertionCreator.expect(Car.class).
-toCallAnyMethod();
+<p class=MsoToc3><a href="#_Toc303270699"><span lang=EN-US>Handling
+AssertionPoints</span><span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>17</span></a></p>
 
+<p class=MsoToc3><a href="#_Toc303270700"><span lang=EN-US>Stubbing Interfaces</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>18</span></a></p>
 
-AssertionBody (class)
-Name	Description	Example Usage
-andOutput(String)	This will not create a tail, but makes the body output a message to System.out when invoked.	AssertionCreator.behaveAs(Car.class).toCallConstructor().
-andOutput(“Constructed”);
+<p class=MsoToc2><a href="#_Toc303270701"><span lang=EN-US>Using Assertion
+Points</span><span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>19</span></a></p>
 
-Name	Description	Example Usage
-andDelegateTo(StubListener)
-+ overload (Class)	This will create a tail that delegates the event to the provided StubListener implementation. The implementation can also be provided as a Class.	AssertionCreator.behaveAs(Car.class).toCallAnyMethod().
-andDelegateTo(carListener);
+<p class=MsoToc3><a href="#_Toc303270702"><span lang=EN-US>What it is</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>19</span></a></p>
 
-AssertionCreator.behaveAs(Car.class).toCallAnyMethod().
-andDelegateTo(CarListener.class);
+<p class=MsoToc3><a href="#_Toc303270703"><span lang=EN-US>AssertionPointCreator
+(class)</span><span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>19</span></a></p>
 
-Name	Description	Example Usage
-andReturn(Object)	This will create a tail that returns the specified value.
-Note that it will use the value of the Object from the time of specification, so later changes to the given object will not be reflected.
-Also note that specifying a return value to a void-method will not give an error, but using an incompatible type will.	AssertionCreator.behaveAs(Car.class).toCall(“isDriving”).
-andReturn(true);
+<p class=MsoToc3><a href="#_Toc303270704"><span lang=EN-US>AssertionHead
+(class)</span><span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>19</span></a></p>
 
-Name	Description	Example Usage
-andThrow(Throwable)	This will create a tail that throws the specified exception when invoked.
-Note that checked exceptions must match the signature of the original method.	AssertionCreator.behaveAs(Car.class).toCall(“isDriving”).
-andThrow(“new RuntimeException(“Test”);
+<p class=MsoToc3><a href="#_Toc303270705"><span lang=EN-US>AssertionBody
+(class)</span><span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>20</span></a></p>
 
-Name	Description	Example Usage
-andReturnNewInstance()	This will create a tail that returns a new instance of the specified class. This is very useful for stubbing Singleton-classes.	AssertionCreator.behaveAs(Tanker.class).toCall(“getInstance”).
-andReturnNewInstance();
+<p class=MsoToc2><a href="#_Toc303270706"><span lang=EN-US>Woodstub Core</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>21</span></a></p>
 
-Name	Description	Example Usage
-andSendToRealClass()	This will create a tail that calls the unstubbed method of the original class.
-Note that this will not work when used with toCallAnyMethod().	AssertionCreator.behaveAs(Car.class).
-toCall(“getMileage”).
-andSendToRealClass();
-Woodstub Core
-What it is
-This is the lowest level a developer can access in Woodstub. The core API exposes methods to “hook up” with the callback logic. At least one connection with the callback logic is required to use Woodstub. Connections are made by registering implementations of StubListener. These implementations will be invoked each time a method is called, and it will be up to the specific implementation to filter the method names, and only respond to the desired ones.
-WoodTestCase does all of the above, by registering itself as a listener, and using AssertionPoints to filter the method calls. 
-If an AssertionPoint is used on its own, it will be necessary to register it as a listener.
-WoodRunner (class)
-Name	Description	Example Usage
-addListener	This will register a StubListener that will be invoked with every method call	WoodRunner.addListener(myListener);
+<p class=MsoToc3><a href="#_Toc303270707"><span lang=EN-US>What it is</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>21</span></a></p>
 
-Name	Description	Example Usage
-removeListener	This will unregister a StubListener.	WoodRunner.removeListener(myListener);
+<p class=MsoToc3><a href="#_Toc303270708"><span lang=EN-US>WoodRunner (class)</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>21</span></a></p>
 
-Name	Description	Example Usage
-cleanup	This will clean up the resources used in a test. It is automatically called after each test class by WoodTestCase.	WoodRunner.cleanup();
+<h2>&nbsp;</h2>
 
-</pre>
+<h2><span lang=EN-US><br>
+<br>
+</span></h2>
+
+<span lang=EN-US style='font-size:11.0pt;line-height:115%;font-family:"Calibri","sans-serif"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"Cambria","serif";color:#4F81BD'>&nbsp;</span></p>
+
+<h1><a name="_Toc303270663"><span lang=EN-US>Preface</span></a></h1>
+
+<h2><a name="_Toc303270664"><span lang=EN-US>Why </span>Bother</a><span
+lang=EN-US> With Woodstub?</span></h2>
+
+<p class=MsoNormal><span lang=EN-US>Why, oh why, would anyone bother with
+making <i>yet</i> another framework for making stubs/mocks? While there <i>are</i>
+several open source frameworks treading roughly the same ground, Woodstub
+belongs to a category which only few have explored. </span></p>
+
+<p class=MsoNormal><span lang=EN-US>To understand the significance it is
+important to look at the history of unit testing. The need for making stub implementations
+of classes to get rid of dependencies has always been there, but the tools for <i>making</i>
+stubs gained massive strength when Java got the Proxy feature. This allowed
+developers to define stub-implementations of interfaces on the fly, which was certainly
+a big step forward from doing it manually. These tools had the limitations that
+in order to stub a dependency, it had to implement an interface <i>and</i> the
+class under test needed to allow for the stubs to be inserted.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>As this was the only easy way to stub
+dependencies, a wave started rolling about how it was not only required by
+these tools to have an interface for every dependency; it was actually <i>the
+only</i> way to code well. The argument is circular, though, because the
+reasoning for <i>why</i> this was supposedly the only way to go, was “It is the
+only way to test with stubs”.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The illusion of “everything must implement
+an interface” started to shatter as stubbing-tools gained the ability to make
+stubs of concrete classes. Some elitists have chosen to ignore this fact, while
+others simply state that “stubbing without interfaces is not nice”. What both
+groups <i>do </i>to seem to agree on, is that dependency injection (DI) is
+still an absolute good, and the only way to make a good software design. The
+reasoning remains the same.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Java has now evolved to a point where it is
+possible to make stubs without DI, which is what Woodstub does, and yet again a
+large part of the developing community refuse to believe in anything but “the
+grand truth”. But the reality is that Woodstub sets the developer free from
+technology-enforced dogmas to design and <i>test</i> software in the way that fits
+with the individual requirement, not just what the tool dictates. </span></p>
+
+<p class=MsoNormal><span lang=EN-US>It is the Woodstub philosophy that the
+developer should tell the tool what to do, not the other way around. Technical
+limitations are just that: Limitations. They should not be made into dogmas. <br
+clear=all style='page-break-before:always'>
+</span></p>
+
+<h2><a name="_Toc303270665"><span lang=EN-US>The Limitations of Extensive DI</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-US>It is of course common that any pattern
+taken to extremes will result in pitfalls, but in the case of DI these pitfalls
+seem to have been sugar coated and largely ignored, which is why this entire
+section is dedicated to the subject.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>It has been vastly popular to hide the
+actual consequences of DI behind frameworks that handle the injections behind
+the scenes. But the reality is that DI used to the extent of the current
+trends, is just a sugar coated way of breaking encapsulation – one of the
+cornerstones in Object Oriented Programming.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Imagine the following code:</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;line-height:115%'>public
+class House {<br>
+   private BathRoom bathRoom;<br>
+   private LivingRoom livingRoom;<br>
+   public House() {<br>
+       bathroom = new BathRoom();<br>
+       livingRoom = new LivingRoom();<br>
+   }   <br>
+}<br>
+<br>
+public class BathRoom {<br>
+   private Bath bath;<br>
+   public BathRoom() {<br>
+      bath = new Bath();<br>
+   }<br>
+}<br>
+<br>
+public class LivingRoom {<br>
+    private Lamp lamp;<br>
+    public LivingRoom() {<br>
+       lamp = new Lamp();<br>
+    }<br>
+}<br>
+<br>
+//Bath and Lamp contain nothing…</span></p>
+
+<p class=MsoNormal><span lang=EN-US>This is a design that follows the
+traditional object oriented principles where each class encapsulates its inner
+structure. To use the House-object no knowledge of its dependencies are needed.
+However, this is considered to be a <i>bad</i> and <i>untestable</i> design by
+the DI-elitists who would rather have the structure like this:</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;line-height:115%'>public
+class House {<br>
+   private BathRoom bathRoom;<br>
+   private LivingRoom livingRoom;<br>
+<br>
+   public House(BathRoom bathRoom, LivingRoom livingRoom) {<br>
+       this.bathroom = bathRoom;<br>
+       this.livingRoom = livingRoom;<br>
+   }   <br>
+}<br>
+<br>
+</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;line-height:115%'>public
+class BathRoom {<br>
+   private Bath bath;<br>
+   public BathRoom(Bath bath) {<br>
+      this.bath = bath;<br>
+   }<br>
+}</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;line-height:115%'>public
+class LivingRoom {<br>
+    private Lamp lamp;<br>
+    public LivingRoom(Lamp lamp) {<br>
+       this.lamp = lamp;<br>
+    }<br>
+}<br>
+</span><span lang=EN-US><br>
+If an interface-elitist had written it, every concrete class would most likely
+have the famous “Impl” at the end of the name, and of course double the amount
+of files, but that would take up to much space to demonstrate here. <br>
+What this design does, is to expose <i>every</i> single part of the system. To
+use the House-object, suddenly knowledge of every single class required. This
+would be the code needed to construct the House-object in one line: <br>
+</span><span lang=EN-US style='font-size:9.0pt;line-height:115%'>new House(new
+BathRoom(new Bath(), new LivingRoom(new Lamp());</span></p>
+
+<p class=MsoNormal><span lang=EN-US>This would turn into a <i>really</i> long
+line of constructor-calls if the rooms and/or inventory got more dependencies,
+and why does the class that uses the House-class need to know all this?<br>
+It is of course possible to hide this ugly construction behind the walls of an
+IoC-framework, but really, is that not just a way of obfuscating the code to
+hide a poor design? And on top of that, why make a design based on technical
+requirements that are not even relevant anymore?</span></p>
+
+<p class=MsoNormal><span lang=EN-US>This is not to defame DI as a concept,
+since it has its uses, i.e. when it is <i>appropriate</i>! That would be for
+having any kind of plug-in construction or objects that require vast
+configuration, but surely it should not be necessary to inject close to the <i>entire
+</i>architecture, which is what seems to be the trend.</span></p>
+
+<span lang=EN-US style='font-size:11.0pt;line-height:115%;font-family:"Calibri","sans-serif"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><b><span lang=EN-US style='font-family:"Cambria","serif";
+color:#4F81BD'>&nbsp;</span></b></p>
+
+<h2><a name="_Toc303270666"><span lang=EN-US>The Advantages of Woodstub</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-US>Why should anyone use Woodstub? Here is a
+list of advantages:</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Wide ranged stubbing abilities. Woodstub goes
+where other frameworks stop. This includes:</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><span lang=EN-US>Singletons, an especially dreaded design pattern
+for its lack of “mockability”.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><span lang=EN-US>Static methods</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><span lang=EN-US>Private methods</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>No intrusion on the software-architecture. There
+is no need for injection – classes are stubbed when you select them to be.
+Write the code like <i>you</i> want it to be, and leave it to Woodstub to
+isolate dependencies.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Simple syntax – no need for “replay”, “verify”
+or the likes. Your tests look like normal code, and the stubs are quick and
+easy to define. In fact, dependencies often do not need special behavior – when
+they are stubbed, they are out of the way.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Excellent for legacy code – chop up the
+spaghetti dependencies!</span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Also supports interface-proxies – the technique
+of the common stubbing/mocking frameworks</span></p>
+
+<span lang=EN-US style='font-size:11.0pt;line-height:115%;font-family:"Calibri","sans-serif"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><b><span lang=EN-US style='font-size:13.0pt;line-height:
+115%;font-family:"Cambria","serif";color:#4F81BD'>&nbsp;</span></b></p>
+
+<h2><a name="_Toc303270667"><span lang=EN-US>The Limitations of Woodstub</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-US>There are, of course, limitations to what
+Woodstub can do and to the way it works. Since this document is not intended to
+hide such things, here are the most obvious ones:</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>JDK-classes cannot be stubbed</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><span lang=EN-US>This is due to a hardcoded restriction in the
+JDK, which prevents JDK-classes to be swapped.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><span lang=EN-US>Although this would be a nice feature, it will hardly
+be necessary for most projects.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Method names are written as Strings</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><span lang=EN-US>Yes, it looks much better when actual method
+calls are used, like </span><span lang=EN-US style='font-size:9.0pt;line-height:
+115%'>when(someClass.someCall()).doStuff()</span><span lang=EN-US><br>
+but the frameworks that use this syntax also suffer from the fact that void-methods
+need a separate approach, which makes the String-syntax more consistent.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><span lang=EN-US>The best approach would be a consistent syntax
+with method-calls, which does not seem to be possible yet. </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Some frameworks do not like when you mess with
+the class loader, which makes it necessary to exclude them in the test class.</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><span lang=EN-US>This is a downside of the class loader
+technique. It is possible to manually define exclusions, which fortunately
+solves most of those problems, when they occur.</span></p>
+
+<span lang=EN-US style='font-size:11.0pt;line-height:115%;font-family:"Calibri","sans-serif"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<h1><a name="_Toc303270668"><span lang=EN-US>Getting Started With Woodstub</span></a></h1>
+
+<h2><a name="_Toc303270669"><span lang=EN-US>Introduction</span></a></h2>
+
+<h3><a name="_Toc303270670"><span lang=EN-US>What Lies Ahead</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>This section describes the easiest way to
+start making unit tests with Woodstub. Each chapter describes a scenario related
+to a topic, followed by a description on how to test that scenario with
+Woodstub, and finishing off with an explanation of what is actually going on.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The final chapter is a complete code
+example of a Woodstub unit test matching the covered topics.</span></p>
+
+<h3><a name="_Toc303270671"><span lang=EN-US>What to Expect</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>As the title suggests, this is not intended
+as a deep and detailed technical description of every detail in Woodstub. It
+is, however, the intention that the reader should be able to write tests with
+Woodstub after reading the document and know the basics of what the code does.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The document can be used as a lookup
+reference, but it is recommended to the read the chapters in sequence at least
+once.</span></p>
+
+<span lang=EN-US style='font-size:11.0pt;line-height:115%;font-family:"Calibri","sans-serif"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><b><span lang=EN-US style='font-size:13.0pt;line-height:
+115%;font-family:"Cambria","serif";color:#4F81BD'>&nbsp;</span></b></p>
+
+<h2><a name="_Toc303270672"><span lang=EN-US>Stubbing Without Configuration</span></a></h2>
+
+<h3><a name="_Toc303270673"><span lang=EN-US>Scenario</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>A class MyClass has the following method:</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;line-height:115%'>public 
+void performMessageLogic(String message) {<br>
+   new MessageSender(“someUrl”).send(message);<br>
+   //More content<br>
+}</span></p>
+
+<p class=MsoNormal><span lang=EN-US>In the test MessageSender should be
+stubbed, so any URL-configuration is out of the way</span></p>
+
+<h3><a name="_Toc303270674"><span lang=EN-US>The Fast Way</span></a></h3>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+lang=EN-US>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Extend WoodTestCase to gain access to a lot of
+shortcuts.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+lang=EN-US>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Add the annotation </span><span lang=EN-US
+style='font-size:9.0pt;line-height:115%'>@Stubs(MessageSender.class)</span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US>Write and run the test of MyClass</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US>All done!</span></p>
+
+<h3><a name="_Toc303270675"><span lang=EN-US>What Actually Happens</span></a></h3>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+lang=EN-US>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>WoodTestCase contains the </span><span
+lang=EN-US style='font-size:9.0pt;line-height:115%'>@RunWith(WoodRunner.class)</span><span
+lang=EN-US> annotation, which is required to use Woodstub.<br>
+<br>
+</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+lang=EN-US>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>The </span><span lang=EN-US style='font-size:
+9.0pt;line-height:115%'>@Stubs </span><span lang=EN-US>annotation marks the
+classes that should be stubbed. The WoodRunner will generate stub-versions of
+these classes, compile them and swap them with the original ones in the class
+loader. <i>No</i> injection is needed!<br>
+<br>
+</span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US>When running within the test, MyClass will automatically use the
+stub-version of MessageSender, which will do nothing at this point. Therefore
+the configuration doesn’t matter.</span></p>
+
+<span lang=EN-US style='font-size:11.0pt;line-height:115%;font-family:"Calibri","sans-serif"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><b><span lang=EN-US style='font-size:13.0pt;line-height:
+115%;font-family:"Cambria","serif";color:#4F81BD'>&nbsp;</span></b></p>
+
+<h2><a name="_Toc303270676"><span lang=EN-US>Stubbing With Predefined Behavior
+– Return Values</span></a></h2>
+
+<h3><a name="_Toc303270677"><span lang=EN-US>Scenario</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>The invocation of MessageSender has been
+changed to this:</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;line-height:115%'>If
+( new MessageSender(“someUrl”).send(message)) {<br>
+   //Content<br>
+} else {<br>
+   throw new MessagingFailedException(“Something failed!”);<br>
+}</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The test should be adapted to match.</span></p>
+
+<h3><a name="_Toc303270678"><span lang=EN-US>The Fast Way</span></a></h3>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+lang=EN-US>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Add the following  code before the actual test
+code:<br>
+</span><span lang=EN-US style='font-size:9.0pt;line-height:115%'>behaveAs(MessageSender.class).toCall(“send”).andReturn(true);</span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US>To test the else-part of the conditional, repeat the test, but
+without the code from step 1.</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US>All done!</span></p>
+
+<h3><a name="_Toc303270679"><span lang=EN-US>What Actually Happens</span></a></h3>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+lang=EN-US>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Each method in the generated stub-class performs
+a callback to WoodRunner.<br>
+WoodRunner has a collection of StubListener-implementations that will be
+invoked on each call.<br>
+WoodStub includes a utility called AssertionPoint, which is a simpler way of
+creating StubListener-implementations.<br>
+WoodTestCase includes some shortcuts for adding AssertPoints along with its own
+logic for containing these.<br>
+AssertionPoints are created in steps: </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>First step is the actual creation, which is done
+with behaveAs(class). This tells the point to look for operations on that
+class. </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>The second step defines the method to listen
+for, by getting the name as a parameter. </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>The last step defines what should happen in the
+method. This scenario calls for a return value, which can be provided by
+calling .andReturn(value) </span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-US>To sum up: The
+AssertionPoint created in the example above makes sure that any instance of
+MessageSender will always return ‘true’, when the method “send” is invoked.<br>
+<br>
+</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+lang=EN-US>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>When no return value has been defined, a default
+value will be used. The default for numbers is 0, for booleans it is ‘false’
+and for non-primitives it is ‘null’. Therefore, the other part of the
+conditional can be tested by simply not defining a return value in that test.<br>
+As an alternative, the method clearPoints() (from WoodTestCase) can be used. It
+will erase all defined AssertionPoints.</span></p>
+
+<p class=MsoListParagraphCxSpLast><span lang=EN-US>&nbsp;</span></p>
+
+<span lang=EN-US style='font-size:11.0pt;line-height:115%;font-family:"Calibri","sans-serif"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><b><span lang=EN-US style='font-size:13.0pt;line-height:
+115%;font-family:"Cambria","serif";color:#4F81BD'>&nbsp;</span></b></p>
+
+<h2><a name="_Toc303270680"><span lang=EN-US>Stubbing With Predefined Behavior
+– Exceptions</span></a></h2>
+
+<h3><a name="_Toc303270681"><span lang=EN-US>Scenario</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>The invocation of MessageSender has yet
+again been changed:</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;line-height:115%'>try
+{<br>
+   If ( new MessageSender(“someUrl”).send(message)) {<br>
+      //Content<br>
+   } else {<br>
+      throw new MessagingFailedException(“Something failed!”);<br>
+   }<br>
+} catch (MessageSendingException e) {<br>
+   //Some logging<br>
+   throw new MessagingFailedException(e);<br>
+}</span></p>
+
+<p class=MsoNormal><span lang=EN-US>This new exception-handling must also be
+tested.</span></p>
+
+<h3><a name="_Toc303270682"><span lang=EN-US>The Fast Way</span></a></h3>
+
+<p class=MsoListParagraph style='text-indent:-18.0pt'><span lang=EN-US
+style='font-size:9.0pt;line-height:115%'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Add the following  code before the actual test
+code:<br>
+</span><span lang=EN-US style='font-size:9.0pt;line-height:115%'>behaveAs(MessageSender.class).toCall(“send”).andThrow(new
+MessageSendingException(“test”));</span></p>
+
+<p class=MsoNormal style='text-indent:18.0pt'><span lang=EN-US>All done!</span></p>
+
+<h3><a name="_Toc303270683"><span lang=EN-US>What Actually Happens</span></a></h3>
+
+<p class=MsoListParagraph style='text-indent:-18.0pt'><span lang=EN-US>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US>The provided exception is saved within the AssertionPoint until the
+method is invoked. Then it is set as a return parameter in the callback-method.<br>
+The generated stub-code checks if the exception-parameter has been set, and if so,
+throws it.<br>
+If the exception does not match the method signature, a Woodstub-specific
+exception will be thrown instead.</span></p>
+
+<span lang=EN-US style='font-size:11.0pt;line-height:115%;font-family:"Calibri","sans-serif"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<h2><a name="_Toc303270684"><span lang=EN-US>Stubbing With Predefined Behavior
+– Advanced Behavior</span></a></h2>
+
+<h3><a name="_Toc303270685"><span lang=EN-US>Scenario</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>The following code has been added to
+MyClass:</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;line-height:115%'>If
+(messageSender.sentMessagesCount()&gt;5) {<br>
+   throw new TooManyMessagesException(“You have sent too many messages!”);<br>
+}</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The test should verify that a total of 5
+messages can be sent before the exception is thrown.</span></p>
+
+<h3><a name="_Toc303270686"><span lang=EN-US>The Fast Way</span></a></h3>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+lang=EN-US style='font-size:9.0pt;line-height:115%'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Add this code: <br>
+</span><span lang=EN-US style='font-size:9.0pt;line-height:115%'>behaveAs(MessageSender.class).toCall(“sentMessagesCount”).andDelegateTo(new
+StubListener() { public void invoked(StubEvent event) {<br>
+   //TODO…<br>
+}};</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+lang=EN-US>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Add an integer field to the class called
+messageCount, and initialize it to zero.</span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US>Inside the StubListener-implementation (TODO…), add this:<br>
+</span><span lang=EN-US style='font-size:9.0pt;line-height:115%'>messageCount++;<br>
+event.setResult(messageCount);</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US>All done!</span></p>
+
+<h3><a name="_Toc303270687"><span lang=EN-US>What Actually Happens</span></a></h3>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+lang=EN-US>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>The AssertionPoint gets a reference to a
+StubListener-implementation, which is an alternative to providing a return
+value. StubListener is the core of the callback-logic in Woodstub, and any
+implementation can be registered as a listener, but when done through the
+AssertionPoint, the implementation will only be called when the matching method
+is invoked. When done manually, the developer needs to check method and class
+names before handling the event.<br>
+It is of course also possible to have the StubListener as a separate class,
+and, as an added bonus the AssertionPoint can receive just the class instead of
+an object, and instantiate it behind the scenes.<br>
+<br>
+</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+lang=EN-US>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>When doing anonymous implementations, it can
+sometimes be necessary to do some extra “juggling” when it comes to
+manipulating fields, like adding setters and getters.<br>
+<br>
+</span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US>The StubEvent object is really the key to defining stub-behavior.
+This object gives access to the method parameters as well as the return value,
+which is set with setResult. An exception can also be provided for the stub
+class to throw.</span></p>
+
+<span lang=EN-US style='font-size:11.0pt;line-height:115%;font-family:"Calibri","sans-serif"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<h2><a name="_Toc303270688"><span lang=EN-US>Putting It All Together</span></a></h2>
+
+<h3><a name="_Toc303270689"><span lang=EN-US>Introduction</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>The following is an example of how to
+create a test class, using the above scenarios. After reading the previous
+chapters it should hopefully be clear what is going on. It is only intended to
+demonstrate the Woodstub-functionality, not necessarily to show a prime example
+of a test class.</span></p>
+
+<h3><a name="_Toc303270690"><span lang=EN-US>Code Example</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;line-height:115%'>@Stubs(MessageSender)<br>
+public class MyClassTest extends WoodTestCase {<br>
+   private MyClass myClass;<br>
+   private int messagesCount;<br>
+<br>
+   @Before<br>
+   public void setup() {<br>
+      myClass = new MyClass();<br>
+      messagesCount=0;<br>
+   }</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;line-height:115%'>  
+@Test<br>
+   public void testSuccesfullSend() {<br>
+      behaveAs(MessageSender.class).toCall(“send”).andReturn(true);<br>
+      myClass.performMessageLogic(“”);<br>
+   }</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;line-height:115%'>@Test<br>
+public void testFailingSend() {<br>
+   try {<br>
+      myClass.performMessageLogic(“”);<br>
+      fail(“Expected exception”);<br>
+   catch (MessageSendingException e) {<br>
+   }<br>
+}</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;line-height:115%'>@Test<br>
+Public void testExceptionFromSender() {<br>
+   behaveAs(MessageSender.class).toCall(“send”).andThrow(new
+FailedMessagingException(“Test”));<br>
+   try {<br>
+      myClass.performMessageLogic(“”);<br>
+      fail(“Expected exception”);<br>
+   catch (MessageSendingException e) {<br>
+   }<br>
+}</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>(continued)</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;line-height:115%'>@Test<br>
+public void testMessageCount() {<br>
+   behaveAs(MessageSender.class).toCall(“send”).andReturn(true);<br>
+   behaveAs(MessageSender.class).toCall(“sentMessagesCount”).andDelegateTo(new
+StubListener() { <br>
+          public void invoked(StubEvent event) {<br>
+            messageCount++;<br>
+            event.setResult(messageCount);<br>
+         }};<br>
+<br>
+   for (int i=0;i&lt;5;i++) {<br>
+       myClass.performMessageLogic(“”);<br>
+   }<br>
+<br>
+  try {<br>
+      myClass.performMessageLogic(“”);<br>
+       fail(“Expected an exception”);<br>
+   } catch (MessageSendingException e) {}</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;line-height:115%'>}</span></p>
+
+<span lang=EN-US style='font-size:8.0pt;line-height:115%;font-family:"Calibri","sans-serif"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:8.0pt;line-height:115%'>&nbsp;</span></p>
+
+<h1><a name="_Toc303270691"><span lang=EN-US>Getting Technical with Woodstub</span></a></h1>
+
+<h2><a name="_Toc303270692"><span lang=EN-US>Introduction</span></a></h2>
+
+<h3><a name="_Toc303270693"><span lang=EN-US>What to Expect</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>This section concerns itself with the three
+main components that can be used in Woodstub:</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>WoodTestCase – The template test class.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Assertion Point – The tool for defining stubs
+with ease.</span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Woodstub Core – The heart of Woodstub</span></p>
+
+<h3><a name="_Toc303270694"><span lang=EN-US>What Lies Ahead</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>Each of the following chapters starts with
+a description of the component, followed by a description of the public methods
+in the contained classes, along with an example of the usage. Since
+WoodTestCase is only one class, it will describe the contained methods sorted
+by subject.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Methods from interfaces that are not
+intended to be invoked by users are not described.</span></p>
+
+<span lang=EN-US style='font-size:11.0pt;line-height:115%;font-family:"Calibri","sans-serif"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><b><span lang=EN-US style='font-size:13.0pt;line-height:
+115%;font-family:"Cambria","serif";color:#4F81BD'>&nbsp;</span></b></p>
+
+<h2><a name="_Toc303270695"><span lang=EN-US>Using WoodTestCase</span></a></h2>
+
+<h3><a name="_Toc303270696"><span lang=EN-US>What it is</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>WoodTestCase is an abstract class which
+contains a lot of helper methods and behind-the-scenes logic. It also sets up
+the @RunWith annotation, which ensures that JUnit will actually use Woodstub.<br>
+Extending WoodTestCase is the absolute fastest way to start testing with
+Woodstub.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The methods described in the section about
+AssertionPoint can all be used through WoodTestCase.</span></p>
+
+<h3><a name="_Toc303270697"><span lang=EN-US>Stubs (annotation)</span></a></h3>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Name</span></b></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Description</span></b></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Example Usage</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>@Stubs</span></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>This class-annotation is
+  always required, regardless of how Woodstub is used. Although the annotation
+  can be inherited, so it is possible to have a set of default stubs in a super
+  class.</span></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:9.0pt'>@Stubs({Car.class,Pedestrian.class})<br>
+  public class MyTestClass extends WoodTestCase {</span></p>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:9.0pt'>   //….<br>
+  }</span></p>
+  </td>
+ </tr>
+</table>
+
+<h3><a name="_Toc303270698"><span lang=EN-US>Excludes(annotation)</span></a></h3>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Name</span></b></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Description</span></b></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Example Usage</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>@Excludes</span></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>This class-annotation is
+  used to manually define what classes should not be loaded by Woodstub’s class
+  loader. It is used for resolving classloader issues that can occur when
+  stubbing close to third part frameworks.<br>
+  Exclusions are defined as Strings and can use wildcard (*).<br>
+  Note that using this annotation will override the predefined exclusions in
+  Woodstub. These will need to be added as well (primarily “java.*”).</span></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:9.0pt'>@Excludes({“java.*”}<br>
+  @Stubs({Car.class,Pedestrian.class})<br>
+  public class MyTestClass extends WoodTestCase {</span></p>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:9.0pt'>   //….<br>
+  }</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<h3><a name="_Toc303270699"><span lang=EN-US>Handling AssertionPoints</span></a><span
+lang=EN-US> </span></h3>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Name</span></b></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Description</span></b></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Example Usage</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>behaveAs(Class)</span></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>Creates a new non-verifying
+  AssertionPoint, and adds it to the list of AssertionPoints contained in
+  WoodTestCase.<br>
+  When a method is invoked, the points in the list will be notified.<br>
+  In order to be useful, the Assertion-chain needs to be completed.</span></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:9.0pt'>behaveAs(Car.class).toCall(“isOpen”).andReturn(true);</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Name</span></b></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Description</span></b></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Example Usage</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>expect(Class)</span></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>Virtually the same as
+  “behaveAs” except that it creates a <i>verifying</i> AssertionPoint, which
+  will fail if the next call doesn’t match its specified class and method.<br>
+  Return type is not part of the validation.</span></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:9.0pt'>behaveAs(Car.class).toCall(“isOpen”).andReturn(true);</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Name</span></b></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Description</span></b></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Example Usage</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>addListener (Class,String,Listener)</span></p>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>+ overload<br>
+  (String,String,Listener)</span></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>A different way of adding 
+  a delegating AssertionPoint, which is mostly there for nostalgic reasons. The
+  provided Listener-object will be invoked when the point is notified.<br>
+  These two methods primarily exist for nostalgic reasons and backwards
+  compatibility.</span></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:9.0pt'>addListener(Car.class,“isOpen”,carListener);<br>
+  addListener(“com.allcars.model.Car”,“isOpen”,carListener);</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Name</span></b></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Description</span></b></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Example Usage</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>clearPoints()</span></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>This method is used for
+  removing all registered AssertionPoints. By default this is done
+  automatically after each test, but if it is necessary to clear them in the
+  middle of a test, this method makes it possible.</span></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:9.0pt'>behaveAs(Car.class).toCall(“isOpen”).andReturn(true);<br>
+  //Do test…<br>
+  clearPoints();<br>
+  behaveAs(Car.class).toCall(“isOpen”).andReturn(false);<br>
+  //Test more…</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Name</span></b></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Description</span></b></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Example Usage</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>cleanUpPoints()</span></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>This method is similar to
+  clearPoints, except that it will make all points clear their references before
+  they are removed.<br>
+  By default this happens automatically after each test.</span></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:9.0pt'>behaveAs(Car.class).toCall(“isOpen”).andReturn(true);<br>
+  //Do test…<br>
+  cleanUpPoints();<br>
+  behaveAs(Car.class).toCall(“isOpen”).andReturn(false);<br>
+  //Test more…</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<h3><a name="_Toc303270700"><span lang=EN-US>Stubbing Interfaces</span></a></h3>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Name</span></b></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Description</span></b></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Example Usage</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>stub(class)</span></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>This method creates a
+  Proxy-implementation of an interface. This is useful when testing a class
+  that requires injection with an interface.<br>
+  The proxy implementation will use the same callback-logic as the normal stub
+  classes, so AssertionPoint can be used to define specific behavior, although
+  it (obviously) cannot return a new instance or send to the real class.<br>
+  If the provided class is not an interface, an exception will be raised.</span></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:9.0pt'>ICar car = stub(ICar.class);<br>
+  behaveAs(ICar.class).toCall(“isOpen”).andReturn(true);</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<span lang=EN-US style='font-size:11.0pt;line-height:115%;font-family:"Calibri","sans-serif"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><b><span lang=EN-US style='font-size:13.0pt;line-height:
+115%;font-family:"Cambria","serif";color:#4F81BD'>&nbsp;</span></b></p>
+
+<h2><a name="_Toc303270701"><span lang=EN-US>Using Assertion Points</span></a></h2>
+
+<h3><a name="_Toc303270702"><span lang=EN-US>What it is</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>An AssertionPoint is an advanced
+implementation of the StubListener interface. It allows for defining stub
+behavior with minimal lines of code, while still having a nice and readable
+syntax.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>There are three parts in an AssertionPoint:</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+lang=EN-US>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>AssertionHead – constructs the body by selecting
+the type of method call to react on. This is also the only part of an
+AssertionPoint which is a StubListener.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+lang=EN-US>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>AssertionBody – constructs the tail by defining
+how to react on a method</span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US>AssertionTail – can do nothing as this is the end of the
+AssertionPoint-chain.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The AssertionHead is created with
+AssertionPointCreator. WoodTestCase effectively hides the
+AssertionPointCreator, as seen in the previous section.</span></p>
+
+<h3><a name="_Toc303270703"><span lang=EN-US>AssertionPointCreator (class)</span></a></h3>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Name</span></b></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Description</span></b></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Example Usage</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>behaveAs</span></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>Creates an AssertionHead
+  which does not perform validation.</span></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:9.0pt'>AssertionCreator.behaveAs(Car.class);</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Name</span></b></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Description</span></b></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Example Usage</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>expect</span></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>Creates an AssertionHead
+  which <i>will</i> perform validation</span></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:9.0pt'>AssertionCreator.expect(Car.class);</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<h3><a name="_Toc303270704"><span lang=EN-US>AssertionHead (class)</span></a></h3>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Name</span></b></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Description</span></b></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Example Usage</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>toCall(String)</span></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>Sets up an AssertionBody to
+  check for a method by the given name.</span></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:9.0pt'>AssertionCreator.behaveAs(Car.class).toCall(“isOpen”);</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=118 valign=top style='width:88.4pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Name</span></b></p>
+  </td>
+  <td width=324 valign=top style='width:243.05pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Description</span></b></p>
+  </td>
+  <td width=215 valign=top style='width:161.25pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Example Usage</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=118 valign=top style='width:88.4pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>toCallConstructor()</span></p>
+  </td>
+  <td width=324 valign=top style='width:243.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>Sets up an AssertionBody to
+  check for the constructor being called.<br>
+  This is most useful when doing an AssertionPoint with validation.</span></p>
+  </td>
+  <td width=215 valign=top style='width:161.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:9.0pt'>AssertionCreator.expect(Car.class).<br>
+  toCallConstructor();</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=118 valign=top style='width:88.45pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Name</span></b></p>
+  </td>
+  <td width=324 valign=top style='width:243.0pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Description</span></b></p>
+  </td>
+  <td width=215 valign=top style='width:161.25pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Example Usage</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=118 valign=top style='width:88.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>toCallAnyMethod()</span></p>
+  </td>
+  <td width=324 valign=top style='width:243.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>Sets up an AssertionBody to
+  react when any method on the class is invoked. This is also useful when doing
+  an AssertionPoint with validation, if a step should be bypassed.</span></p>
+  </td>
+  <td width=215 valign=top style='width:161.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:9.0pt'>AssertionCreator.expect(Car.class).<br>
+  toCallAnyMethod();</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<h3><a name="_Toc303270705"><span lang=EN-US>AssertionBody (class)</span></a></h3>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Name</span></b></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Description</span></b></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Example Usage</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>andOutput(String)</span></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>This will not create a
+  tail, but makes the body output a message to System.out when invoked.</span></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:9.0pt'>AssertionCreator.behaveAs(Car.class).toCallConstructor().<br>
+  andOutput(“Constructed”);</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=173 valign=top style='width:129.45pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Name</span></b></p>
+  </td>
+  <td width=156 valign=top style='width:116.95pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Description</span></b></p>
+  </td>
+  <td width=328 valign=top style='width:246.3pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Example Usage</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=173 valign=top style='width:129.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>andDelegateTo(StubListener)<br>
+  + overload (Class)</span></p>
+  </td>
+  <td width=156 valign=top style='width:116.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>This will create a tail
+  that delegates the event to the provided StubListener implementation. The
+  implementation can also be provided as a Class.</span></p>
+  </td>
+  <td width=328 valign=top style='width:246.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:9.0pt'>AssertionCreator.behaveAs(Car.class).toCallAnyMethod().<br>
+  andDelegateTo(carListener);<br>
+  <br>
+  AssertionCreator.behaveAs(Car.class).toCallAnyMethod().<br>
+  andDelegateTo(CarListener.class);</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Name</span></b></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Description</span></b></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Example Usage</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>andReturn(Object)</span></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>This will create a tail
+  that returns the specified value.<br>
+  Note that it will use the value of the Object from the time of specification,
+  so later changes to the given object will not be reflected.<br>
+  Also note that specifying a return value to a void-method will not give an
+  error, but using an incompatible type will.</span></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:9.0pt'>AssertionCreator.behaveAs(Car.class).toCall(“isDriving”).<br>
+  andReturn(true);</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Name</span></b></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Description</span></b></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Example Usage</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>andThrow(Throwable)</span></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>This will create a tail
+  that throws the specified exception when invoked.<br>
+  Note that checked exceptions must match the signature of the original method.</span></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:9.0pt'>AssertionCreator.behaveAs(Car.class).toCall(“isDriving”).<br>
+  andThrow(“new RuntimeException(“Test”);</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Name</span></b></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Description</span></b></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Example Usage</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>andReturnNewInstance()</span></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>This will create a tail
+  that returns a new instance of the specified class. This is very useful for
+  stubbing Singleton-classes.</span></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:9.0pt'>AssertionCreator.behaveAs(Tanker.class).toCall(“getInstance”).<br>
+  andReturnNewInstance();</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=140 valign=top style='width:104.65pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Name</span></b></p>
+  </td>
+  <td width=227 valign=top style='width:6.0cm;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Description</span></b></p>
+  </td>
+  <td width=291 valign=top style='width:217.95pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Example Usage</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=140 valign=top style='width:104.65pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>andSendToRealClass()</span></p>
+  </td>
+  <td width=227 valign=top style='width:6.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>This will create a tail
+  that calls the unstubbed method of the original class.<br>
+  Note that this will not work when used with toCallAnyMethod().</span></p>
+  </td>
+  <td width=291 valign=top style='width:217.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:9.0pt'>AssertionCreator.behaveAs(Car.class).<br>
+  toCall(“getMileage”).<br>
+  andSendToRealClass();</span></p>
+  </td>
+ </tr>
+</table>
+
+<h2><a name="_Toc303270706"><span lang=EN-US>Woodstub Core</span></a></h2>
+
+<h3><a name="_Toc303270707"><span lang=EN-US>What it is</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>This is the lowest level a developer can
+access in Woodstub. The core API exposes methods to “hook up” with the callback
+logic. At least one connection with the callback logic is required to use
+Woodstub. Connections are made by registering implementations of StubListener.
+These implementations will be invoked each time a method is called, and it will
+be up to the specific implementation to filter the method names, and only
+respond to the desired ones.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>WoodTestCase does all of the above, by
+registering itself as a listener, and using AssertionPoints to filter the method
+calls. </span></p>
+
+<p class=MsoNormal><span lang=EN-US>If an AssertionPoint is used on its own, it
+will be necessary to register it as a listener.</span></p>
+
+<h3><a name="_Toc303270708"><span lang=EN-US>WoodRunner (class)</span></a></h3>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Name</span></b></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Description</span></b></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Example Usage</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>addListener</span></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>This will register a
+  StubListener that will be invoked with every method call</span></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:9.0pt'>WoodRunner.addListener(myListener);</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Name</span></b></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Description</span></b></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Example Usage</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>removeListener</span></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>This will unregister a
+  StubListener.</span></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:9.0pt'>WoodRunner.removeListener(myListener);</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Name</span></b></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Description</span></b></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><b><span lang=EN-US>Example Usage</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>cleanup</span></p>
+  </td>
+  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:10.0pt'>This will clean up the
+  resources used in a test. It is automatically called after each test class by
+  WoodTestCase.</span></p>
+  </td>
+  <td width=305 valign=top style='width:228.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'><span lang=EN-US style='font-size:9.0pt'>WoodRunner.cleanup();</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
 </body>
+
 </html>
