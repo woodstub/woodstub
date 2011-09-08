@@ -1,3 +1,10 @@
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Woodstub                                                                  ~
+  ~ Copyright (c) 2011                                                        ~
+  ~ Developed by Claus Brøndby Reimer & Asbjørn Andersen                      ~
+  ~ All rights reserved                                                       ~
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
 <woodstub>
     <stub-builder>org.wooddog.woodstub.builder.BuilderFactory</stub-builder>
     <excludes>
