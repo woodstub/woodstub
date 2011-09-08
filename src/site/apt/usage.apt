@@ -1,0 +1,315 @@
+  ------
+  Usage
+  ------
+  Claus Brøndby Reimer
+  ------
+  July 16 2010
+  ------
+
+Usage
+
+%{toc|section=1|fromDepth=1|toDepth=3}
+
+
+* Brief introduction to stubbing and mocking
+
+  Stubbing is about replacing functionality to simulate behavior in a class.
+
+  This is very useful when writing unit tests for a class that use other classes which is difficult to initialize when
+  not running in it's natural environment like servlets, classes that returns unpredictable values like current time and
+  results based on dynamic data like a database or producing errors that would otherwise be difficult to raise.
+
+  Mocking is about verifying that the stubbed methods are invoked in the right sequence with the correct parameters.
+
+
+* The WoodRunner
+
+  The WoodRunner is the runner used with jUnit that makes it possible to stub classes on the fly. This is done by
+  inspecting the classes marked to be stubbed with reflecting, building and compiling a new version of the classes and
+  loading it on a separate class loader where the class to be tested also is loaded and finally executed.
+
+  To tell jUnit to run with the WoodRunner the annotation <<<"@RunWith(WoodRunner.class)">>> most be added in the junit class
+
+  The classes to be stubbed most be given with the annotation <<<"@Stubs({A.class, B.class, etc})">>>
+
+  If for some reason some classes should not be loaded on the class loader where the test is executed it can be excluded
+  with <<<"@Excludes ({"org.apache.log4j\\..*"})">>>, the Excludes annotation takes a comma separated list of regular
+  expressions and any class that matches one of these are loaded on the systems class loader.
+
+
+* Stub Event And Listener
+
+  To be able to retrieve invocation events from the stubbed classes, a stub listener most be created and added to the
+  WoodRunner.
+
+  Every call made to a stub will notify the listener with a StubEvent that contains all relevant information such as
+  invoked class name, constructor or method name, parameter values etc.
+
+  If the stubbed method should return a value or raise an exception the value is passed on to the StubEvent which will
+  then either cause the method to return the given value or raise the exception.
+
+  see org.wooddog.woodstub.junit.WoodRunner.addListener(StubListener),
+      org.wooddog.woodstub.junit.StubListener,
+      org.wooddog.woodstub.junit.StubEvent for details.
+
+  In most cases it is easiest to setup a flow of expected methods to be called, this can be achieved with the
+  AssertionFlow class where all expected invocations is setup prior to execution.
+
+  Each expected invocation is added to the AssertionFlow as a StubListener class and when the listener is called, the
+  method and parameter values can be verified whit jUnit's asserts.
+
++--
+    AssertionFlow flow = new AssertionFlow();
+
+    flow.add(new StubListener() {
+        public void invoked(StubEvent event) {
+            Assert.assertEquals("queryForObject", event.getMethodName());
+            Assert.assertEquals("select password from users where user = 'claus'", event.getObject(1));
+            event.setResult("good password");
+        }
+    });
++--
+
+  Though if a more sophisticated way of verifying expectations is needed than the AssertionFlow provides, a custom
+  StubListener can be developed and attached to the listeners of the WoodRunner class.
+
+
+* Mocking In Work
+
+  Imaging we have a Database class that handles the connection and execution of queries for a the application. As
+  part of the application we have a login class that uses the Database class to verify user account information.
+
+  In the following sample we will verify that a correct user name password pair will cause the Login class to return true
+  without actually calling any methods in the Database class as we are going to stub it.
+
+** Simple Sample
+
+  First the Database class, in this sample it's just a dummy class to keep things short.
+
++---
+public class DataBase {
+
+    public void openConnection() {
+        System.out.println("opening database connection");
+    }
+
+    public Object queryForObject(String sql) {
+        System.out.println("executing " + sql);
+        return "SQL RESULT";
+    }
+
+    public void closeConnection() {
+        System.out.println("closing database connection");
+    }
+}
++---
+
+
+  Then the login bean that we are gonna test.
+
++---
+public class LoginBean {
+    private String username;
+    private String password;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public boolean doLogin() {
+        DataBase db;
+        String password;
+
+        db = new DataBase();
+        db.openConnection();
+
+        password = (String) db.queryForObject("select password from users where user = '" + username + "'");
+
+        db.closeConnection();
+
+        return password.equals(this.password);
+    }
+}
++---
+
+
+  And now the test case that will prove that the login bean work as we expect it to.
+
++---
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.wooddog.woodstub.junit.AssertionFlow;
+import org.wooddog.woodstub.junit.annotation.Stubs;
+import org.wooddog.woodstub.junit.StubEvent;
+import org.wooddog.woodstub.junit.StubListener;
+import org.wooddog.woodstub.junit.WoodRunner;
+
+// Tell junit to use the WoodRunner, this is required to be able to create the stubs on the fly.
+@RunWith (WoodRunner.class)
+
+// Tells the WoodRunner to stub the DataBase class
+@Stubs(DataBase.class)
+
+public class LoginTest {
+
+    @Test
+    public void testLoginSuccess() throws Exception {
+        AssertionFlow flow;
+        LoginBean loginBean;
+
+        // First we setup a flow of expectations.
+
+        flow = new AssertionFlow();
+
+        // The first call we expect is openConnection()
+        flow.add(new StubListener() {
+            public void invoked(StubEvent event) {
+                Assert.assertEquals("openConnection", event.getMethodName());
+            }
+        });
+
+        // Then a query for the password of the user claus
+        flow.add(new StubListener() {
+            public void invoked(StubEvent event) {
+                Assert.assertEquals("queryForObject", event.getMethodName());
+                Assert.assertEquals("select password from users where user = 'claus'", event.getObject(1));
+
+                // Setting the value that the queryForObject method will return when invoked.
+                event.setResult("good password");
+            }
+        });
+
+        // And at last we expect closeConnection to be called
+        flow.add(new StubListener() {
+            public void invoked(StubEvent event) {
+                Assert.assertEquals("closeConnection", event.getMethodName());
+            }
+        });
+
+
+        // Setting up the object to be tested.
+        loginBean = new LoginBean();
+        loginBean.setUsername("claus");
+        loginBean.setPassword("good password");
+
+        // Adding our assertion flow to the runner, and start listening for method calls.
+        WoodRunner.addListener(flow);
+
+        // execute doLogin, which will fire of calls to the DataBase class, hopefully in the order and with the
+        // parameters we expect, else an assertion error is raised and our test case fails.
+        Assert.assertTrue(loginBean.doLogin());
+
+        // Check if all our expected calls has been made.
+        Assert.assertTrue(flow.isCompleted());
+
+    }
++---
+
+** Stubbing a singleton
+
+  Stubbed methods returns null by default, which in case of stubbing a singleton most likely causes a null pointer
+  exception. To handle this situation create the instance of the singleton and set the instance as the result of
+  calling DataBase.getInstance().
+
+  In case the singleton has a private constructor the StubHelper has a convenience method creating the singleton anyway,
+  otherwise it can be done by refection.
+
++---
+    @Test
+    public void singletonTest() {
+        final DataBase database = StubHelper.newInstance(DataBase.class);
+
+        new StubListener() {
+            public void invoked(StubEvent event) {
+                Assert.assertEquals("getInstance", event.getMethodName());
+
+                event.setResult(database);
+            }
+        }
+    }
++---
+
+** Classes with one time initialization
+
+  Classes that only initialize once can cause problems, an example of this is Log4J. When Log4j is started it loads
+  an appender class and if one of the tests uses a logger, that logger will also load an appender, but because they are
+  loaded on two different class loaders the VM does not see them as the same type and a class cast exception is raised.
+
+  To fix this, either stub the Logger class or add @ExcludeClasses(Appendar.class) to the junit class
+
++---
+
+@RunWith (WoodRunner.class)
+@Stubs(DataBase.class)
+@Excludes(org.apache.log4j\\.*)
+
+public class LoginTest {
+  ...
+}
++---
+
+
+* Configuration
+
+** Class level
+
+  Configuration values can be given in a jUnit class with the following annotations.
+
+*------------+----------------------------------+-----------------------------------------------------+
+|Stubs       |@Stubs ({A.class, B.class})       |A comma separated list of classes to be stubbed      |
+*------------+----------------------------------+-----------------------------------------------------+
+|Excludes    |@Excludes ({"org.apache.log4j"})  |Loads the given classes on the system's class loader |
+*------------+----------------------------------+-----------------------------------------------------+
+|StubBuilder |@StubBuilder ({MyBuilder.class})  |Class for building the source code of the stubs      |
+*------------|----------------------------------+-----------------------------------------------------+
+
+** Global scope
+
+  If the configuration value is of global characteristic it can be placed in a xml file referred by the system property
+  <<<"woodstub.config">>> or placed in the classpath root with the name <<<"woodstub-config.xml">>>
+
+  Configuration file sample
+
++---
+  <woodstub>
+    <stub-builder>org.wooddog.woodstub.builder.BuilderFactory</stub-builder>
+    <excludes>
+        <exclude>org.apache.log4j\..*</exclude>
+    </excludes>
+    <stubs>
+        <stub>class.to.be.Stubbed</stub>
+    </stubs>
+</woodstub>
++---
+
+
+* Custom stub builder
+
+    Any or all of the CodeBuilder-implementations can be replaced by extending BuilderFactory and overriding methods. For
+    instance if you have made a new ClassBuilder, we'll call it "FancyClassBuilder", you make a subclass to BuilderFactory
+    and override createBuilder with the following:
+
+    @Override
+    public CodeBuilder createBuilder(Class clazz) {
+            return new FancyClassBuilder(clazz);
+    }
+
+    You can then select the new Factory for a test by using the @StubBuilder(FancyBuilderFactory.class) annotation.
+
+    By replacing a CodeBuilder-implementation, you can also replace the CodeElement-implementation that is used, or add a
+    new one.
+
+  

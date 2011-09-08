@@ -1,0 +1,117 @@
+8
+
+dir
+129
+https://www.wooddog.org/svn/woodstub/trunk/optional/assertion-point/src/main/java/org/wooddog/woodstub/assertionpoint
+https://www.wooddog.org/svn/woodstub
+
+
+
+2010-10-05T14:21:00.802342Z
+124
+claus
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+31867d39-3451-4c98-b9cd-8ce51a3eb795
+
+AssertionBody.java
+file
+0
+
+
+add
+
+AssertionHead.java
+file
+0
+
+
+add
+
+AssertionPoint.java
+file
+
+
+
+replace
+2010-10-05T13:09:40.651000Z
+
+2010-10-05T14:18:07.715530Z
+122
+claus
+
+AssertionPointCreator.java
+file
+
+
+
+add
+
+
+
+
+
+
+
+
+
+
+
+
+
+copied
+https://www.wooddog.org/svn/woodstub/trunk/optional/assertion-point/src/main/java/org/wooddog/woodstub/assertionpoint/AssertionPoint.java
+129
+
+AssertionTail.java
+file
+0
+
+
+add
+
+Cleanable.java
+file
+0
+
+
+add
+
+WoodTestCase.java
+file
+
+
+
+
+2011-03-02T10:47:49.275000Z
+2b4f7cdde741cce5935cb0c8af1e181c
+2010-10-05T14:21:00.802342Z
+124
+claus
+
+logic
+dir
+
+
+
+add
+
+proxy
+dir
+
+
+
+add
+

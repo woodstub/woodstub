@@ -1,0 +1,110 @@
+  ------
+  Introduction
+  ------
+  Claus Brøndby Reimer
+  ------
+  July 14 2010
+  ------
+
+Wood Stub
+
+  Woodstub is a mock framework for use with JUnit. The special thing about this mock framework compared to others is that the
+  object to be stubbed do not need to implement an interface, and the classes using the stub will not need a setter.
+
+  Key features
+
+   * Stub any type of class, concrete, abstract, inner classes etc.
+
+   * Plugable stub builder, create a custom builder with a minimum of effort for advanced stubbing.
+
+   * Easy implementation of custom expectation controller.
+   
+
+Sneak Peak.
+
+  The following sample shows a small sample of how a JUnit test class looks like when using Woodstub.
+
+  The full sample is found on the usage page.
+
++---
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.wooddog.woodstub.junit.AssertionFlow;
+import org.wooddog.woodstub.junit.annotation.Stubs;
+import org.wooddog.woodstub.junit.StubEvent;
+import org.wooddog.woodstub.junit.StubListener;
+import org.wooddog.woodstub.junit.WoodRunner;
+
+@RunWith (WoodRunner.class)
+@Stub(DataBase.class)
+public class LoginTest {
+
+    @Test
+    public void testLoginSuccess() throws Exception {
+        AssertionFlow flow;
+        LoginBean loginBean;
+
+
+        flow = new AssertionFlow();
+
+        // Setting up the expectations
+
+        // first we expect the constructor to be invoked
+        flow.add(new StubListener() {
+            public void invoked(StubEvent event) {
+                Assert.assertEquals("DataBase", event.getMethodName());
+            }
+        });
+
+        // Then we expect the openConnection to be called
+        flow.add(new StubListener() {
+            public void invoked(StubEvent event) {
+                Assert.assertEquals("openConnection", event.getMethodName());
+            }
+        });
+
+        // Then query for the password of the user claus
+        flow.add(new StubListener() {
+            public void invoked(StubEvent event) {
+                Assert.assertEquals("queryForObject", event.getMethodName());
+                Assert.assertEquals("select password from users where user = 'claus'", event.getObject(1));
+
+                // Setting the value that the queryForObject method will return when invoked.
+                event.setResult("good password");
+            }
+        });
+
+        // And at last we expect closeConnection to be called
+        flow.add(new StubListener() {
+            public void invoked(StubEvent event) {
+                Assert.assertEquals("closeConnection", event.getMethodName());
+            }
+        });
+
+
+        // Setting up the object to be tested.
+        loginBean = new LoginBean();
+        loginBean.setUsername("claus");
+        loginBean.setPassword("good password");
+
+        // Adding our assertion flow to the runner, and start listening for method calls.
+        WoodRunner.addListener(flow);
+        flow.start();
+
+        // execute doLogin, which will fire of calls to the DataBase class, hopefully in the order and with the
+        // parameters we expect, else an assertion error is raised and our test case fails.
+        Assert.assertTrue(loginBean.doLogin());
+
+        // Check if all our expected calls has been made.
+        Assert.assertTrue(flow.isCompleted());
+
+    }
++---
+
+
+
+
+
+
+

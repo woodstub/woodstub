@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/woodstub/!svn/ver/119/trunk/core/src/main/java/org/wooddog/woodstub/junit/annotation
+END
+StubBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/woodstub/!svn/ver/119/trunk/core/src/main/java/org/wooddog/woodstub/junit/annotation/StubBuilder.java
+END
+Excludes.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/woodstub/!svn/ver/119/trunk/core/src/main/java/org/wooddog/woodstub/junit/annotation/Excludes.java
+END
+Stubs.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/woodstub/!svn/ver/119/trunk/core/src/main/java/org/wooddog/woodstub/junit/annotation/Stubs.java
+END

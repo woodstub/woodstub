@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/woodstub/!svn/ver/119/trunk/core/src/main/java/org/wooddog/woodstub/compiler
+END
+Compiler.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/woodstub/!svn/ver/119/trunk/core/src/main/java/org/wooddog/woodstub/compiler/Compiler.java
+END
+MemoryJavaFileObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/woodstub/!svn/ver/119/trunk/core/src/main/java/org/wooddog/woodstub/compiler/MemoryJavaFileObject.java
+END
+MemoryJavaFileManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/woodstub/!svn/ver/119/trunk/core/src/main/java/org/wooddog/woodstub/compiler/MemoryJavaFileManager.java
+END

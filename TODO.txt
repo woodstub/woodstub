@@ -1,0 +1,11 @@
+Add support for custom excludes, to enable eg. LOG4J only to be loaded on the system class loader. right now log4j
+also needs to be mocked to avoid spawning errors on the console
+
+Stub class order is not interdependent, but could easily be done with some source analyzing before compiling and
+injecting
+
+Named parameters in addtion to indexed parameters for getting parameter values in StubCall (source is most likely 
+available for stubs to be created)
+
+
+30/7: Add support for enums! Right now we generate a class that extends Enum, which is not legal

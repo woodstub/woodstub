@@ -1,0 +1,12 @@
+<woodstub>
+    <stub-builder>org.wooddog.woodstub.builder.BuilderFactory</stub-builder>
+    <excludes>
+        <exclude>org.junit\..*</exclude>
+        <exclude>sun.com\..*</exclude>
+    </excludes>
+    <!--
+    <stubs>
+        <stub></stub>
+    </stubs>
+    -->
+</woodstub>

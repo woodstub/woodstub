@@ -1,0 +1,49 @@
+8
+
+dir
+0
+https://www.wooddog.org/svn/woodstub/trunk/optional/assertion-point/src/main/java/org/wooddog/woodstub/assertionpoint/proxy
+https://www.wooddog.org/svn/woodstub
+add
+
+
+
+
+
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+31867d39-3451-4c98-b9cd-8ce51a3eb795
+
+ProxyCreator.java
+file
+
+
+
+add
+
+ProxyException.java
+file
+
+
+
+add
+
+ProxyStub.java
+file
+
+
+
+add
+

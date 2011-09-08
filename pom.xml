@@ -1,0 +1,146 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wooddog</groupId>
+    <artifactId>woodstub-core</artifactId>
+    <packaging>jar</packaging>
+    <version>1.1</version>
+    <name>woodstub core</name>
+    <url>http://www.wooddog.org/maven/site/${artifactId}</url>
+
+    <developers>
+        <developer>
+            <name>Claus Brøndby Reimer</name>
+            <organization>wooddog</organization>
+            <roles><role>Developer</role></roles>
+            <timezone>+1</timezone>
+        </developer>
+        <developer>
+            <name>Asbjørn Andersen</name>
+            <organization>wooddog</organization>
+            <roles><role>Developer</role></roles>
+            <timezone>+1</timezone>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <comments></comments>
+            <name>Apache 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repository</distribution>
+        </license>
+    </licenses>
+    
+    <distributionManagement>
+        <!--
+        <repository>
+            <id>wooddog</id>
+            <url>dav:https://www.wooddog.org/dav/maven/release</url>
+        </repository>
+        <snapshotRepository>
+            <id>wooddog</id>
+            <url>dav:https://www.wooddog.org/maven/snapshot</url>
+        </snapshotRepository>
+
+        -->
+        <snapshotRepository>
+            <id>projects.TELIASONERA.release</id>
+            <url>dav:https://subversion.apt.fs.fujitsu.com/maven/repository/TELIASONERA/release</url>
+        </snapshotRepository>
+
+        <repository>
+              <id>projects.TELIASONERA.release</id>
+              <url>dav:https://subversion.apt.fs.fujitsu.com/maven/repository/TELIASONERA/release</url>
+        </repository>
+
+        <site>
+            <id>wooddog</id>
+            <url>dav:https://www.wooddog.org/dav/maven/site/${artifactId}</url>
+        </site>
+    </distributionManagement>
+    
+    
+    <dependencies>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.9</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.7</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <encoding>ISO-8859-1</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals><goal>jar</goal></goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.doxia</groupId>
+                        <artifactId>doxia-module-xhtml</artifactId>
+                        <version>1.0</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <reporting>
+        <plugins>
+            <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-javadoc-plugin</artifactId>
+                  <version>2.6.1</version>
+                  <configuration>
+                    <doctitle>My API for ${project.name} ${project.version}</doctitle> <!-- Used by javadoc:javadoc goal -->
+                    <windowtitle>My API for ${project.name} ${project.version}</windowtitle> <!-- Used by javadoc:javadoc goal -->
+                    <testDoctitle>My Test API for ${project.name} ${project.version}</testDoctitle> <!-- Used by javadoc:test-javadoc goal -->
+                    <testWindowtitle>My Test API for ${project.name} ${project.version}</testWindowtitle> <!-- Used by javadoc:test-javadoc goal -->
+                  </configuration>
+                </plugin>
+            <!--
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+            </plugin>
+            -->
+        </plugins>
+    </reporting>
+
+    <properties>
+        <projectVersion>${project.version}</projectVersion>
+    </properties>
+</project>
+

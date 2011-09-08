@@ -1,0 +1,27 @@
+<project>
+
+    <bannerLeft>
+        <name>Woodstub</name>
+        <href>/</href>
+        <src>images/logo.png</src>
+    </bannerLeft>
+
+    <version position="right"/>
+
+    <body>
+        <menu name="Documentation">
+            <item name="Introduction" href="index.html"/>
+            <item name="Usage" href="usage.html"/>
+            <item name="JavaDocs" href="apidocs/index.html"/>
+        </menu>
+        
+        <menu name="Project">
+            <item name="Download" href="download.html"/>
+            <item name="Issue Tracking" href="https://www.wooddog.org/jira/secure/CreateIssue!default.jspa"/>
+            <item name="The Team" href="team-list.html"/>
+            <item name="License" href="license.html"/>
+        </menu>
+        
+    </body>
+
+</project>

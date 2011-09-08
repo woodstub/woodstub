@@ -1,0 +1,43 @@
+  ------
+  Download
+  ------
+  Claus Brøndby Reimer
+  ------
+  September 01 2009
+  ------
+
+Download
+
+  For use with maven you can simple add this dependency to you pom file.
+
++---
+    <dependency>
+       <groupId>org.wooddog</groupId>
+       <artifactId>woodstub</artifactId>
+       <version>${projectVersion}</version>
+    </dependency>
++---
+
+
+* Source And Binaries
+
+  * {{{http://repo1.maven.org/maven2/org/wooddog/woodstub/}releases}}
+
+  * {{{https://www.wooddog.org/maven/snapshot/}snapshots}}
+
+
+* SVN Access
+
+  Source code is accessible with an anonymous SVN acount from http://www.wooddog.org/public/svn/woodstub/  
+
+  All stable release can be found in the tags folder with the syntax X.Y.Z.
+
+  Release branches is found in the branch folder with the name X.Y
+
+  The main development track is found in trunk
+
+
+
+
+
+

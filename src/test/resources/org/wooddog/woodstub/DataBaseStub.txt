@@ -1,0 +1,17 @@
+package org.wooddog.demo;
+
+public class DataBase {
+
+    private static org.wooddog.woodstub.junit.StubListener __CALLBACK__;
+
+    public DataBase () {
+        org.wooddog.woodstub.junit.StubEvent call = new org.wooddog.woodstub.junit.StubEvent("org.wooddog.demo.DataBase", null, "DataBase");
+        __CALLBACK__.invoked(call);
+    }
+
+    public java.lang.String execute (java.lang.String arg0) {
+        org.wooddog.woodstub.junit.StubEvent call = new org.wooddog.woodstub.junit.StubEvent("org.wooddog.demo.DataBase", "java.lang.String", "execute", arg0);
+        __CALLBACK__.invoked(call);
+        return (java.lang.String) call.getResult();
+    }
+}
