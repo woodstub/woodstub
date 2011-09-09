@@ -23,14 +23,25 @@ public class WoodRunner extends BlockJUnit4ClassRunner {
         super(init(clazz));
     }
 
+    /**
+     * Adds a listener which will be notified with every method call.
+     * @param listener The listener to register
+     */
     public static void addListener(StubListener listener) {
         LISTENERS.add(listener);
     }
 
+    /**
+     * Unregisters a listener.
+     * @param listener The listener to unregister
+     */
     public static void removeListener(StubListener listener) {
         LISTENERS.remove(listener);
     }
 
+    /**
+     * Cleans up all resources.
+     */
     public static void cleanup() {
         ClassLoaderWrapper.cleanup();
         LISTENERS.clear();

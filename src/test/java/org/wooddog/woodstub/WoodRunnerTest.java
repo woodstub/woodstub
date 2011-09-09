@@ -5,7 +5,7 @@
  * All rights reserved                                                        *
  ******************************************************************************/
 
-package org.wooddog.woodstub.misc;
+package org.wooddog.woodstub;
 
 import org.junit.*;
 import org.junit.runner.RunWith;
