@@ -27,43 +27,90 @@ public class InternalStubEvent implements StubEvent {
     }
 
     /**
-     * Gets the boolean value represented at the given index of method arguments.
+     * Gets the boolean value, indexed by occurrence.
      *
-     * @param parameterIndex The index of the argument starting at 1.
-     * @return The the long value represented at the given parameter index.
+     * @param parameterIndex The numbered occurrence of the type, starting at 1.
+     * @return The specified value.
      */
     public boolean getBoolean(int parameterIndex) {
         return valueKeeper.getBoolean(parameterIndex);
     }
 
+    /**
+     * Gets the char value, indexed by occurrence.
+     *
+     * @param parameterIndex The numbered occurrence of the type, starting at 1.
+     * @return The specified value.
+     */
     public char getChar(int parameterIndex) {
         return valueKeeper.getChar(parameterIndex);
     }
 
+    /**
+     * Gets the byte value, indexed by occurrence.
+     *
+     * @param parameterIndex The numbered occurrence of the type, starting at 1.
+     * @return The specified value.
+     */
     public byte getByte(int parameterIndex) {
         return valueKeeper.getByte(parameterIndex);
     }
 
+    /**
+     * Gets the short value, indexed by occurrence.
+     *
+     * @param parameterIndex The numbered occurrence of the type, starting at 1.
+     * @return The specified value.
+     */
     public short getShort(int parameterIndex) {
         return valueKeeper.getShort(parameterIndex);
     }
 
+    /**
+     * Gets the int value, indexed by occurrence.
+     *
+     * @param parameterIndex The numbered occurrence of the type, starting at 1.
+     * @return The specified value.
+     */
     public int getInt(int parameterIndex) {
         return valueKeeper.getInt(parameterIndex);
     }
 
+    /**
+     * Gets the long value, indexed by occurrence.
+     *
+     * @param parameterIndex The numbered occurrence of the type, starting at 1.
+     * @return The specified value.
+     */
     public long getLong(int parameterIndex) {
         return valueKeeper.getLong(parameterIndex);
     }
 
+    /**
+     * Gets the float value, indexed by occurrence.
+     *
+     * @param parameterIndex The numbered occurrence of the type, starting at 1.
+     * @return The specified value.
+     */
     public float getFloat(int parameterIndex) {
         return valueKeeper.getFloat(parameterIndex);
     }
 
+    /**
+     * Gets the double value, indexed by occurrence.
+     *
+     * @param parameterIndex The numbered occurrence of the type, starting at 1.
+     * @return The specified value.
+     */
     public double getDouble(int parameterIndex) {
         return valueKeeper.getDouble(parameterIndex);
     }
 
+    /**
+     * Get the specified parameter value as an Object.
+     * @param parameterIndex The index of the argument starting at 1.
+     * @return
+     */
     public Object getObject(int parameterIndex) {
         return valueKeeper.getObject(parameterIndex);
     }
@@ -105,15 +152,6 @@ public class InternalStubEvent implements StubEvent {
                 ", className='" + className + '\'' +
                 ", result=" + result +
                 '}';
-    }
-
-    @Override
-    public Object getSource() {
-        return source;
-    }
-
-    public void setSource(Object source) {
-        this.source = source;
     }
 
     @Override

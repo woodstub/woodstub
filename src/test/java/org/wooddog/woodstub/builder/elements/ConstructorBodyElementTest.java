@@ -5,12 +5,25 @@
  * All rights reserved                                                        *
  ******************************************************************************/
 
-package org.wooddog.woodstub.junit;
+package org.wooddog.woodstub.builder.elements;
+
+import org.junit.Test;
+import org.wooddog.woodstub.DesignTester;
 
 /**
- * The interface that allows communication with the backend logic.
- * Implementations can be registered with WoodRunner, to be notified of method invocations.
+ * Created by Asbjørn Andersen
+ * <p/>
+ * User: denasa
+ * Date: 12-08-2010
+ * Time: 18:00:21
  */
-public interface StubListener {
-    void invoked(StubEvent event);
+public class ConstructorBodyElementTest {
+    public void testGetCode() {
+        
+    }
+
+    @Test
+    public void testDesign() {
+        DesignTester.testCodeElementDesign(ConstructorBodyElement.class);
+    }
 }

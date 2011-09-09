@@ -5,12 +5,22 @@
  * All rights reserved                                                        *
  ******************************************************************************/
 
-package org.wooddog.woodstub.junit;
+package org.wooddog.demo;
 
 /**
- * The interface that allows communication with the backend logic.
- * Implementations can be registered with WoodRunner, to be notified of method invocations.
+ * Created by Asbjørn Andersen
+ *
+ * User: denasa
+ * Date: 10-08-2010
+ * Time: 14:12:54
  */
-public interface StubListener {
-    void invoked(StubEvent event);
+public enum DataEnum {
+    GoodData,BadData;
+    
+    public static int getIntValue(DataEnum data) {
+        if (data == GoodData) {
+            return 1;
+        }
+        return -1;
+    }
 }

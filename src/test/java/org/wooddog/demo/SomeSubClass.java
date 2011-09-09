@@ -5,12 +5,17 @@
  * All rights reserved                                                        *
  ******************************************************************************/
 
-package org.wooddog.woodstub.junit;
+package org.wooddog.demo;
 
 /**
- * The interface that allows communication with the backend logic.
- * Implementations can be registered with WoodRunner, to be notified of method invocations.
+ * Created by Asbjørn Andersen
+ * <p/>
+ * User: denasa
+ * Date: 11-08-2010
+ * Time: 12:07:22
  */
-public interface StubListener {
-    void invoked(StubEvent event);
+public class SomeSubClass extends SomeSuperClass {
+    public SomeSubClass(String gimmeString,int i, String gimmeMoreString) {
+        super(gimmeString, i, gimmeMoreString);
+    }
 }

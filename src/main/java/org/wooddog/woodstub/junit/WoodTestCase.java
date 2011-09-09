@@ -29,13 +29,9 @@ public abstract class WoodTestCase extends TestCase implements StubListener {
     private int flowIndex = 0;
 
     protected WoodTestCase() {
-        this(false);
-    }
-
-    protected WoodTestCase(boolean invokeAsFlow) {
         points = new LinkedList<AssertionPoint>();
         WoodRunner.addListener(this);
-        this.invokeAsFlow = invokeAsFlow;
+        this.invokeAsFlow = false;
     }
 
     /**

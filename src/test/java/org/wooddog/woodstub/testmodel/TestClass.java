@@ -5,12 +5,24 @@
  * All rights reserved                                                        *
  ******************************************************************************/
 
-package org.wooddog.woodstub.junit;
+package org.wooddog.woodstub.testmodel;
 
-/**
- * The interface that allows communication with the backend logic.
- * Implementations can be registered with WoodRunner, to be notified of method invocations.
- */
-public interface StubListener {
-    void invoked(StubEvent event);
+import org.junit.Ignore;
+
+@Ignore
+public class TestClass extends TestSuperClass {
+    public TestClass(int i) {
+        super(i);
+    }
+
+    public void setAnInt(int i) {
+        //Lala
+    }
+
+    public void setAnotherInt(Integer i) {
+        //Lala
+    }
+
+    public void doOutput(SomeObject o) {
+    }
 }

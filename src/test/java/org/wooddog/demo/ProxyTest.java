@@ -5,12 +5,17 @@
  * All rights reserved                                                        *
  ******************************************************************************/
 
-package org.wooddog.woodstub.junit;
+package org.wooddog.demo;
 
-/**
- * The interface that allows communication with the backend logic.
- * Implementations can be registered with WoodRunner, to be notified of method invocations.
- */
-public interface StubListener {
-    void invoked(StubEvent event);
+import org.junit.Test;
+import org.wooddog.woodstub.assertionpoint.proxy.ProxyCreator;
+import org.wooddog.woodstub.junit.WoodTestCase;
+
+public class ProxyTest extends WoodTestCase {
+    @Test
+    public void testWithProxy() {
+        TestInterface inter = ProxyCreator.create(TestInterface.class);
+        behaveAs(TestInterface.class).toCall("getStuff").andReturn(1);
+        assertEquals(1,inter.getStuff());
+    }
 }

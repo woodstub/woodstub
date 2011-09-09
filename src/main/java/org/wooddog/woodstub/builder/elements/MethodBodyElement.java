@@ -34,8 +34,6 @@ public class MethodBodyElement extends CodeElement {
     private static final String VOID = "void";
     private static final String RETURN = "return (";
     private static final String GET_RESULT = " call.getResult();";
-    private static final String CALL_SET_SOURCE_NULL = "call.setSource(null);";
-    private static final String CALL_SET_SOURCE_THIS = "call.setSource(this);";
     private static final String CLASS = ".class";
     private static final String NEW_CLASS = "new Class[]{";
     private static final String THROW = "        throw (";
@@ -66,7 +64,6 @@ public class MethodBodyElement extends CodeElement {
     public String getCode() {
         StringBuilder builder = new StringBuilder();
         addCallbackInvoke(builder);
-        addSetSource(builder);
         addNotifyCall(builder);
         addExceptionHandling(builder);
         addReturnStatement(builder);
@@ -136,14 +133,6 @@ public class MethodBodyElement extends CodeElement {
         }
 
         builder.append(newLine);
-    }
-
-    private void addSetSource(StringBuilder builder) {
-        if (isStatic) {
-            builder.append(CALL_SET_SOURCE_NULL);
-        } else {
-            builder.append(CALL_SET_SOURCE_THIS);
-        }
     }
 
     private void addNotifyCall(StringBuilder builder) {
