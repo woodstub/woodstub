@@ -15,9 +15,25 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import static junit.framework.Assert.assertEquals;
 
 public class ClassHierarchyComparatorTest {
     private List<Class> loaded;
+
+    @Test
+    public void testEquals() {
+         assertEquals(0,new ClassHierarchyComparator().compare(A1.class, A1.class));
+    }
+
+    @Test
+    public void testFirstAssignableFromSecond() {
+         assertEquals(-1,new ClassHierarchyComparator().compare(A1.class, A2.class));
+    }
+
+    @Test
+    public void testSecondAssignableFromFirst() {
+         assertEquals(1,new ClassHierarchyComparator().compare(A2.class, A1.class));
+    }
 
     @Test
     public void testDependencyList() {
@@ -61,94 +77,24 @@ public class ClassHierarchyComparatorTest {
         verify(c.getSuperclass());
     }
 
-    /**
-     * Created by Asbjørn Andersen
-     * <p/>
-     * User: denasa
-     * Date: 12-08-2010
-     * Time: 16:35:29
-     */
     static class A1 {}
 
-    /**
-     * Created by Asbjørn Andersen
-     * <p/>
-     * User: denasa
-     * Date: 12-08-2010
-     * Time: 16:35:30
-     */
     static class A2 extends A1 {}
 
-    /**
-     * Created by Asbjørn Andersen
-     * <p/>
-     * User: denasa
-     * Date: 12-08-2010
-     * Time: 16:35:30
-     */
     static class A3 extends A2 {}
 
-    /**
-     * Created by Asbjørn Andersen
-     * <p/>
-     * User: denasa
-     * Date: 12-08-2010
-     * Time: 16:35:30
-     */
     static class A4 extends A3 {}
 
-    /**
-     * Created by Asbjørn Andersen
-     * <p/>
-     * User: denasa
-     * Date: 12-08-2010
-     * Time: 16:35:30
-     */
     static class B1 {}
 
-    /**
-     * Created by Asbjørn Andersen
-     * <p/>
-     * User: denasa
-     * Date: 12-08-2010
-     * Time: 16:35:30
-     */
     static class B2 extends B1 {}
 
-    /**
-     * Created by Asbjørn Andersen
-     * <p/>
-     * User: denasa
-     * Date: 12-08-2010
-     * Time: 16:35:30
-     */
     static class B3 extends B2 {}
 
-    /**
-     * Created by Asbjørn Andersen
-     * <p/>
-     * User: denasa
-     * Date: 12-08-2010
-     * Time: 16:35:30
-     */
     static class B4 extends B3 {}
 
-    /**
-     * Created by Asbjørn Andersen
-     * <p/>
-     * User: denasa
-     * Date: 12-08-2010
-     * Time: 16:35:30
-     */
     static class C1 extends B2 {}
 
-    /**
-     * Created by Asbjørn Andersen
-     * <p/>
-     * User: denasa
-     * Date: 12-08-2010
-     * Time: 16:35:30
-     */
     static class C2 extends C1 {}
 }
 

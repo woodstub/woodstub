@@ -16,4 +16,8 @@ public class SomeObject {
         return 100;
     }
 
+    public void aMethodWithExceptions() throws RuntimeException, Exception {
+
+    }
+
 }

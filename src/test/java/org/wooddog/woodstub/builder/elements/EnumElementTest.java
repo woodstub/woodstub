@@ -12,19 +12,19 @@ import org.wooddog.woodstub.DesignTester;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.fail;
 
-public class RootElementTest {
+public class EnumElementTest {
     @Test
-    public void testDesign() {
-        DesignTester.testCodeElementDesign(MethodDefinitionElement.class);
+    public void testThatMethodBodyElementCannotBeAddedToEnum() throws Exception {
+        try {
+            new EnumElement("name","modifier","blah",new String[0]).addChild(new MethodBodyElement("","",""));
+            fail("Expected an exception");
+        }catch (IllegalArgumentException e) {
+            assertEquals("Element had an invalid type:class org.wooddog.woodstub.builder.elements.MethodBodyElement",e.getMessage());
+        }
     }
 
     @Test
-    public void testThatMethodElementCannotBeAddedToRoot() throws Exception {
-        try {
-            new RootElement().addChild(new MethodDefinitionElement("","","",new Class[0]));
-            fail("Expected an exception");
-        }catch (IllegalArgumentException e) {
-            assertEquals("Only ClassElement or EnumElement can be added to root!",e.getMessage());
-        }
+    public void testDesign() {
+        DesignTester.testCodeElementDesign(EnumElement.class);
     }
 }

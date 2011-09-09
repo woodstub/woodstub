@@ -7,13 +7,6 @@
 
 package org.wooddog.demo;
 
-/**
- * Created by Asbjørn Andersen
- *
- * User: denasa
- * Date: 10-08-2010
- * Time: 14:12:54
- */
 public enum DataEnum {
     GoodData,BadData;
     
@@ -23,4 +16,12 @@ public enum DataEnum {
         }
         return -1;
     }
+
+    public static final boolean isGood(DataEnum data) {
+        return data == GoodData;
+    }
+    public void giveVoid(Void v) {
+            System.out.println(v.toString());
+    }
+
 }

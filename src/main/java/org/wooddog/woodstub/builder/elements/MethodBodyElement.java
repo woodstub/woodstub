@@ -57,7 +57,7 @@ public class MethodBodyElement extends CodeElement {
     }
 
     public void addChild(CodeElement e) {
-        throw new IllegalArgumentException("Cannot contain children!");
+        throw new IllegalArgumentException("MethodBodyElement cannot contain children!");
     }
 
     @Override

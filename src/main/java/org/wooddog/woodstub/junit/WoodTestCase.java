@@ -20,7 +20,8 @@ import java.util.List;
 
 /**
  * To be implemented by test-classes.
- * Allows the user to add listeners for specific method names
+ * Allows the user to add listeners for specific method names,
+ * and gives fast access to AssertionPoints and Proxy-creation.
  */
 @RunWith(WoodRunner.class)
 public abstract class WoodTestCase extends TestCase implements StubListener {
@@ -51,6 +52,13 @@ public abstract class WoodTestCase extends TestCase implements StubListener {
     public AssertionHead expect(Class type) {
         invokeAsFlow = true;
         return addPoint(AssertionPointCreator.expect(type));
+    }
+
+    /**
+     * Creates a single Proxy-stub of an interface.
+     */
+    protected <T> T stub(Class<T> clazz) {
+        return ProxyCreator.create(clazz);
     }
 
     /**
@@ -91,13 +99,6 @@ public abstract class WoodTestCase extends TestCase implements StubListener {
     }
 
     /**
-     * Creates a single Proxy-stub of an interface.
-     */
-    protected <T> T stub(Class<T> clazz) {
-        return ProxyCreator.create(clazz);
-    }
-
-    /**
      * Add a listener for a specific method
      *
      * @param className  Name of a stubbed class (including package)
@@ -125,7 +126,7 @@ public abstract class WoodTestCase extends TestCase implements StubListener {
     }
 
     /**
-     * Removes all assertion points.
+     * Removes all assertion points, without cleaning.
      */
     protected void clearPoints() {
         points.clear();

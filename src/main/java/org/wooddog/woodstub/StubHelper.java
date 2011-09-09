@@ -24,6 +24,7 @@ public class StubHelper {
         Field field = getFieldFromObject(fieldName, object);
         boolean accessible = makeFieldAccessible(field);
 
+        //Cannot be extracted to method!
         T value;
         try {
             value = (T) field.get(object);

@@ -12,7 +12,7 @@ import java.util.Comparator;
 /**
  * Sorts class based on relation ship to produce a list sequenced by dependency.
  *
- * Class'es from the top will only contain dependency downwards.
+ * Classes from the top will only contain dependency downwards.
  */
 public class ClassHierarchyComparator implements Comparator<Class> {
     @Override

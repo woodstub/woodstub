@@ -19,13 +19,12 @@ public class TestStubEnum extends WoodTestCase {
     @Test
     public void testEnumStubbing() {
         behaveAs(DataEnum.class).toCall("getIntValue").andReturn(666);
-
+        behaveAs(DataEnum.class).toCall("isGood").andReturn(true);
         DataEnum en = DataEnum.GoodData;
+        assertTrue(DataEnum.isGood(DataEnum.BadData));
         assertEquals(DataEnum.BadData,DataEnum.valueOf("BadData"));
         assertEquals(666,DataEnum.getIntValue(en));
     }
-
-
 
     @Test
     public void testException() {
@@ -39,4 +38,5 @@ public class TestStubEnum extends WoodTestCase {
         assertEquals(DataEnum.BadData,DataEnum.valueOf("BadData"));
         assertEquals(667,DataEnum.getIntValue(en));
     }
+
 }

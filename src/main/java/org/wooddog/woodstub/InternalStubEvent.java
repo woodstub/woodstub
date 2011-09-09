@@ -18,6 +18,9 @@ public class InternalStubEvent implements StubEvent {
     private boolean redirectToRealClass;
     private ValueKeeper valueKeeper;
 
+    /**
+     * Should only be constructed through the stub-logic.
+     */
     public InternalStubEvent(String className, String returnType, String methodName, Class[] types, Object[] providedValues) {
         this.className = className;
         this.methodName = methodName;

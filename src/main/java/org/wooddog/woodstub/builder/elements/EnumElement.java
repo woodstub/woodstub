@@ -47,10 +47,7 @@ public class EnumElement extends CodeElement {
 
     private void addModifier(StringBuilder builder) {
         builder.append(newLine);
-        if (!modifier.equals("static") && modifier.contains("final")) {
-            modifier = modifier.replace("final", EMPTY);
-        }
-
+        modifier = modifier.replace("final", EMPTY);
         builder.append(modifier);
     }
 
@@ -88,13 +85,11 @@ public class EnumElement extends CodeElement {
     }
 
     private void addPackageDefinition(StringBuilder builder) {
-        if (!packageName.isEmpty()) {
-            builder.append("package");
-            builder.append(space);
-            builder.append(packageName);
-            builder.append(SEMICOLON);
-            builder.append(newLine);
-        }
+        builder.append("package");
+        builder.append(space);
+        builder.append(packageName);
+        builder.append(SEMICOLON);
+        builder.append(newLine);
     }
 
     public void addChild(CodeElement e) {
@@ -105,6 +100,7 @@ public class EnumElement extends CodeElement {
             super.addChild(e);
             return;
         }
+
         throw new IllegalArgumentException("Element had an invalid type:" + e.getClass());
     }
 }

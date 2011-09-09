@@ -16,8 +16,8 @@ class ValueKeeper {
     int longCount = 0;
     int floatCount = 0;
     int doubleCount = 0;
-    private boolean[] booleans;
 
+    private boolean[] booleans;
     private char[] chars;
     private byte[] bytes;
     private short[] shorts;
