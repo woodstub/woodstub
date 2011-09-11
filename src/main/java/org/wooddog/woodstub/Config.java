@@ -31,11 +31,11 @@ public class Config {
         loadConfiguration();
         addMarkedStubs(clazz);
         addInheritedStubs(clazz);
-        addExcludes(clazz);
+        addCustomExcludes(clazz);
     }
 
     public static List<Class> getStubs() {
-        if (STUB_LIST == null) {
+        if (!exists(STUB_LIST)) {
             STUB_LIST = new LinkedList<Class>();
         }
 
@@ -43,7 +43,7 @@ public class Config {
     }
 
     public static List<String> getExcludedClasses() {
-        if (EXCLUDE_LIST == null) {
+        if (!exists(EXCLUDE_LIST)) {
             EXCLUDE_LIST = new LinkedList<String>();
         }
 
@@ -51,11 +51,11 @@ public class Config {
     }
 
     public static void cleanUp() {
-        if (STUB_LIST != null) {
+        if (exists(STUB_LIST)) {
             STUB_LIST.clear();
         }
 
-        if (EXCLUDE_LIST != null) {
+        if (exists(STUB_LIST)) {
             EXCLUDE_LIST.clear();
         }
 
@@ -86,19 +86,19 @@ public class Config {
     }
 
     private static void addStubsFromClass(Class superClass) {
-        Stubs stubs = getStubsAnnotation(superClass);
-        if (exists(stubs)) {
-            for (Class c : stubs.value()) {
-                if (!STUB_LIST.contains(c)) {
-                    STUB_LIST.add(c);
+        Stubs definedStubs = getStubsAnnotation(superClass);
+        if (exists(definedStubs)) {
+            for (Class classToStub : definedStubs.value()) {
+                if (!STUB_LIST.contains(classToStub)) {
+                    STUB_LIST.add(classToStub);
                 }
             }
         }
     }
 
-    private static void addExcludes(Class clazz) {
+    private static void addCustomExcludes(Class clazz) {
         Excludes excludes = getExcludesAnnotation(clazz);
-        if (excludes != null) {
+        if (exists(excludes)) {
             EXCLUDE_LIST.clear();
             EXCLUDE_LIST.addAll(Arrays.asList(excludes.value()));
         }
@@ -112,8 +112,8 @@ public class Config {
         return !superClass.getName().endsWith(OBJECT);
     }
 
-    private static boolean exists(Stubs stubs) {
-        return stubs != null;
+    private static boolean exists(Object objectToCheck) {
+        return objectToCheck != null;
     }
 
     private static Excludes getExcludesAnnotation(Class clazz) {

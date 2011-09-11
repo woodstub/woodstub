@@ -57,7 +57,7 @@ public class EndorsedClassLoader extends ClassLoader {
 
     @Override
     protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
-        if (isNotHandledClass(name)) {
+        if (!isHandledClass(name)) {
             return super.loadClass(name, resolve);
         }
 
@@ -97,25 +97,21 @@ public class EndorsedClassLoader extends ClassLoader {
         InputStream stream = getResourceAsStream(resourceName + CLASS);
 
         byte[] code = StreamUtil.read(stream);
-        Class c = defineClass(className, code, 0, code.length);
-
-        return c;
+        return defineClass(className, code, 0, code.length);
     }
 
-    private boolean isNotHandledClass(String className) {
-        List<String> excludedClassList;
-
+    private boolean isHandledClass(String className) {
         if (className.startsWith(JAVA)) {
-            return true;
+            return false;
         }
 
-        excludedClassList = Config.getExcludedClasses();
+        List<String> excludedClassList = Config.getExcludedClasses();
         for (String name : excludedClassList) {
             if (className.matches(name)) {
-                return true;
+                return false;
             }
         }
 
-        return false;
+        return true;
     }
 }

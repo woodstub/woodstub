@@ -16,8 +16,13 @@ public class SomeObject {
         return 100;
     }
 
-    public void aMethodWithExceptions() throws RuntimeException, Exception {
+    public void aMethodWithExceptions() throws RuntimeException, Exception {}
 
-    }
-
+    public void intMethod(int i) {}
+    public void charMethod(char c) {}
+    public void shortMethod(short i) {}
+    public void byteMethod(byte i) {}
+    public void longMethod(long i) {}
+    public void floatMethod(float i) {}
+    public void doubleMethod(double i) {}
 }

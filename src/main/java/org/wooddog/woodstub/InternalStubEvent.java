@@ -10,7 +10,6 @@ package org.wooddog.woodstub;
 import org.wooddog.woodstub.junit.StubEvent;
 
 public class InternalStubEvent implements StubEvent {
-    private Object source;
     private final String methodName;
     private final String className;
     private Object result;

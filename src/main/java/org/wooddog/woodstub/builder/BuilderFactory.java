@@ -18,6 +18,7 @@ public class BuilderFactory {
         if (INSTANCE==null) {
             INSTANCE=new BuilderFactory();
         }
+
         return INSTANCE;
     }
 
@@ -32,6 +33,7 @@ public class BuilderFactory {
         if (clazz.isEnum()) {
             return new EnumBuilder(clazz);
         }
+
         return new ClassBuilder(clazz);
     }
 

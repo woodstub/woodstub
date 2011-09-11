@@ -39,7 +39,6 @@ public class Compiler {
 
     public void addSourceFile(String className, String source) throws IOException {
         if (sourceFiles.containsKey(className)) {
-            System.out.println("Skipped one!");
             return;
         }
 
@@ -58,13 +57,4 @@ public class Compiler {
         manager.cleanup();
         sourceFiles.clear();
     }
-
-    public boolean hasSource(String className) {
-        return sourceFiles.containsKey(className);
-    }
-
-    public static void clearSources() {
-        sourceFiles.clear();
-    }
-
 }

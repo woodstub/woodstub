@@ -11,10 +11,7 @@ public class ClassLoaderWrapper {
     private static EndorsedClassLoader classLoader;
 
     public static EndorsedClassLoader createNewEndorsedClassLoader(Class clazz) {
-        if (classLoader != null) {
-            classLoader.cleanUp();
-        }
-
+        cleanup();
         classLoader = new EndorsedClassLoader(clazz.getClassLoader());
         return classLoader;
     }
