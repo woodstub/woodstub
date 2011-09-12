@@ -8,7 +8,18 @@
 package org.wooddog.woodstub.assertionpoint;
 
 public interface AssertionHead extends AssertionPoint {
+    /**
+     * Define a method to listen for.
+     */
     public AssertionBody toCall(String method);
+
+    /**
+     * Listen for constructor.
+     */
     public AssertionBody toCallConstructor();
+
+    /**
+     * Listen for any method.
+     */
     public AssertionBody toCallAnyMethod();
 }

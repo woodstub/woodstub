@@ -10,5 +10,8 @@ package org.wooddog.woodstub.assertionpoint;
 import org.wooddog.woodstub.junit.StubEvent;
 
 public interface AssertionTail extends Cleanable {
+    /**
+     * Do not use. For internal logic only.
+     */
     void invokeTail(StubEvent event);
 }
