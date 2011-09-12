@@ -8,6 +8,7 @@
 package org.wooddog.woodstub.assertionpoint.logic;
 
 import org.wooddog.woodstub.assertionpoint.AssertionBody;
+import org.wooddog.woodstub.assertionpoint.AssertionFailedException;
 import org.wooddog.woodstub.assertionpoint.AssertionTail;
 import org.wooddog.woodstub.junit.StubEvent;
 import org.wooddog.woodstub.junit.StubListener;
@@ -48,6 +49,18 @@ class PointBody implements AssertionBody {
     @Override
     public AssertionTail andThrow(Throwable exception) {
         tail = new ExceptionTail(exception);
+        return tail;
+    }
+
+    @Override
+    public AssertionTail andFail() {
+        tail = new ExceptionTail(new AssertionFailedException("Method should not have been called."));
+        return tail;
+    }
+
+    @Override
+    public AssertionTail andFail(String message) {
+        tail = new ExceptionTail(new AssertionFailedException(message));
         return tail;
     }
 

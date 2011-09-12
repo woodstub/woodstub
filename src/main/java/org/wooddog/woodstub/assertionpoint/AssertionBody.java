@@ -16,6 +16,8 @@ public interface AssertionBody extends Cleanable{
     public AssertionTail andDelegateTo(Class callbackClass);
     public AssertionTail andReturn(Object value);
     public AssertionTail andThrow(Throwable exception);
+    public AssertionTail andFail();
+    public AssertionTail andFail(String message);
     public AssertionTail andReturnNewInstance();
     public AssertionTail andSendToRealClass();
     void invokeBodyAndTail(StubEvent event);

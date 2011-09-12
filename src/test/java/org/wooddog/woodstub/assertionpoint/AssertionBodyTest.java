@@ -21,13 +21,13 @@ public class AssertionBodyTest extends WoodTestCase {
     @Test
     public void testAnyMethod() {
         behaveAs(SomeObject.class).toCallAnyMethod().andReturn(50);
-        assertEquals(50,new SomeObject().someMethod("arg"));
-        assertEquals(50,new SomeObject().someOtherMethod("arg", "arg"));
+        assertEquals(50, new SomeObject().someMethod("arg"));
+        assertEquals(50, new SomeObject().someOtherMethod("arg", "arg"));
     }
 
     @Test
     public void testConstructorAndOutput() {
-        called=false;
+        called = false;
         behaveAs(SomeObject.class).toCallConstructor().andOutput("Constructed").andDelegateTo(new StubListener() {
             @Override
             public void invoked(StubEvent event) {
@@ -46,7 +46,23 @@ public class AssertionBodyTest extends WoodTestCase {
         expect(SomeObject.class).toCall("someOtherMethod").andReturn(3);
 
         SomeObject obj = new SomeObject();
-        assertEquals(2,obj.someMethod("arg"));
-        assertEquals(3,obj.someOtherMethod("arg","arg"));
+        assertEquals(2, obj.someMethod("arg"));
+        assertEquals(3, obj.someOtherMethod("arg", "arg"));
+    }
+
+    @Test(expected = AssertionFailedException.class)
+    public void testFailingMethod() {
+        behaveAs(SomeObject.class).toCall("someMethod").andFail();
+        new SomeObject().someMethod("hej");
+    }
+
+    @Test()
+    public void testFailingMethodWithMessage() {
+        try {
+            behaveAs(SomeObject.class).toCall("someMethod").andFail("Test");
+            new SomeObject().someMethod("hej");
+        } catch (AssertionFailedException e) {
+            assertEquals("Test", e.getMessage());
+        }
     }
 }
