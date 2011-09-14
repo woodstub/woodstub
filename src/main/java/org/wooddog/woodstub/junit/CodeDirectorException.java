@@ -9,7 +9,7 @@ package org.wooddog.woodstub.junit;
 
 import org.wooddog.woodstub.builder.CodeBuilderException;
 
-class CodeDirectorException extends Throwable {
+class CodeDirectorException extends RuntimeException {
     public CodeDirectorException(CodeBuilderException source) {
         super(source);
     }

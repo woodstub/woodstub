@@ -8,7 +8,7 @@
 package org.wooddog.woodstub.builder.elements;
 
 import org.wooddog.woodstub.builder.MethodBodyFieldKeeper;
-
+import static org.wooddog.woodstub.builder.elements.MethodBodyCodeSnippets.*;
 /**
  * The body of a method.
  * Will only contain callback related code, and specialised return statement.
@@ -21,25 +21,8 @@ public class MethodBodyElement extends CodeElement {
     private String returnType;
     private String[] parameterTypeNames;
     private String castName;
-    private boolean isStatic;
     private Class[] exceptions;
-    private static final String STUB_EVENT_CALL = "org.wooddog.woodstub.InternalStubEvent call = new org.wooddog.woodstub.InternalStubEvent(";
-    private static final String NOTIFY_CALL = "\n org.wooddog.woodstub.junit.WoodRunner.notify(call); " +
-            "\nif (call.getException() != null) {" +
-            "\n    if (call.getException() instanceof RuntimeException) {" +
-            "\n         throw (RuntimeException) call.getException();" +
-            "\n    " + END_BRACKET + "\n";
-    private static final String EXCEPTION_ERROR_MSG = "    throw new  org.wooddog.woodstub.StubException(call.getException().getClass().getCanonicalName() + \" can't be thrown from ";
-    private static final String IF_EXCEPTION_IN_SIGNATURE = "    if (call.getException().getClass().getCanonicalName().equals(\"";
-    private static final String VOID = "void";
-    private static final String RETURN = "return (";
-    private static final String GET_RESULT = " call.getResult();";
-    private static final String CLASS = ".class";
-    private static final String NEW_CLASS = "new Class[]{";
-    private static final String THROW = "        throw (";
-    private static final String CALL_GET_EXCEPTION = ") call.getException();";
-    private static final String NEW_OBJECT_ARRAY = "new Object[]{";
-    private static final String NULL = "null);";
+
 
     public MethodBodyElement(MethodBodyFieldKeeper keeper, String[] typeNames, String castName) {
         addDataFromKeeper(keeper);
@@ -84,7 +67,6 @@ public class MethodBodyElement extends CodeElement {
         this.argumentPrefix = keeper.getArgumentPrefix();
         this.methodName = keeper.getMethodName();
         this.returnType = keeper.getReturnType();
-        this.isStatic = keeper.isStatic();
         this.exceptions = keeper.getExceptionTypes();
     }
 
@@ -103,31 +85,32 @@ public class MethodBodyElement extends CodeElement {
 
     private void addClassParameters(StringBuilder builder) {
         if (parameterTypeNames.length > 0) {
-            builder.append(NEW_CLASS);
-            for (int i = 0; i < parameterTypeNames.length; i++) {
-                if (i != 0) {
-                    builder.append(", ");
-                }
-
-                builder.append(parameterTypeNames[i]).append(CLASS);
-            }
-
-            builder.append(END_BRACKET + ", ");
+            addParametersAddClassArray(builder);
         } else {
             builder.append("null,");
         }
     }
 
+    private void addParametersAddClassArray(StringBuilder builder) {
+        builder.append(NEW_CLASS_ARRAY);
+        for (int i = 0; i < parameterTypeNames.length; i++) {
+            addParameterAsClass(builder, i);
+        }
+
+        builder.append(END_BRACKET + ", ");
+    }
+
+    private void addParameterAsClass(StringBuilder builder, int i) {
+        if (i != 0) {
+            builder.append(", ");
+        }
+
+        builder.append(parameterTypeNames[i]).append(CLASS);
+    }
+
     private void addObjectParameters(StringBuilder builder) {
         if (parameterTypeNames.length > 0) {
-            builder.append(NEW_OBJECT_ARRAY);
-            for (int i = 0; i < parameterTypeNames.length; i++) {
-                if (i != 0) {
-                    builder.append(", ");
-                }
-                builder.append(argumentPrefix).append(i + 1);
-            }
-            builder.append(END_BRACKET + ");");
+            appendParametersAsObjectArray(builder);
         } else {
             builder.append(NULL);
         }
@@ -135,27 +118,48 @@ public class MethodBodyElement extends CodeElement {
         builder.append(newLine);
     }
 
+    private void appendParametersAsObjectArray(StringBuilder builder) {
+        builder.append(NEW_OBJECT_ARRAY);
+        for (int i = 0; i < parameterTypeNames.length; i++) {
+            addParameterInArray(builder, i);
+        }
+
+        builder.append(END_BRACKET + ");");
+    }
+
+    private void addParameterInArray(StringBuilder builder, int i) {
+        if (i != 0) {
+            builder.append(", ");
+        }
+
+        builder.append(argumentPrefix).append(i + 1);
+    }
+
     private void addNotifyCall(StringBuilder builder) {
         builder.append(NOTIFY_CALL);
     }
 
     private void addExceptionHandling(StringBuilder builder) {
-        addExceptionValidation(builder);
+        addExceptionValidations(builder);
         addInvalidExceptionHandling(builder);
     }
 
-    private void addExceptionValidation(StringBuilder builder) {
+    private void addExceptionValidations(StringBuilder builder) {
         if (exceptions != null) {
             for (Class exception : exceptions) {
-                builder.append(IF_EXCEPTION_IN_SIGNATURE).append(exception.getCanonicalName()).append("\")) {");
-                builder.append(newLine);
-                builder.append(THROW).append(exception.getCanonicalName()).append(CALL_GET_EXCEPTION);
-                builder.append(newLine);
-                builder.append(END_BRACKET);
+                addExceptionValidation(builder, exception);
             }
         }
 
         builder.append(newLine);
+    }
+
+    private void addExceptionValidation(StringBuilder builder, Class exception) {
+        builder.append(IF_EXCEPTION_IN_SIGNATURE).append(exception.getCanonicalName()).append("\")) {");
+        builder.append(newLine);
+        builder.append(THROW).append(exception.getCanonicalName()).append(CALL_GET_EXCEPTION);
+        builder.append(newLine);
+        builder.append(END_BRACKET);
     }
 
     private void addInvalidExceptionHandling(StringBuilder builder) {
@@ -176,14 +180,14 @@ public class MethodBodyElement extends CodeElement {
     }
 
     private boolean methodHasReturnType() {
-        return isNotConstructor() && isNotVoid();
+        return !isConstructor() && !isVoid();
     }
 
-    private boolean isNotVoid() {
-        return !returnType.equals(VOID);
+    private boolean isVoid() {
+        return returnType.equals(VOID);
     }
 
-    private boolean isNotConstructor() {
-        return returnType != null && !returnType.equals(EMPTY);
+    private boolean isConstructor() {
+        return returnType == null || returnType.equals(EMPTY);
     }
 }

@@ -8,7 +8,6 @@
 package org.wooddog.woodstub.junit;
 
 import org.wooddog.woodstub.StubException;
-
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -41,15 +40,24 @@ class OriginalInvoker {
         ClassLoader loader = ClassLoader.getSystemClassLoader();
         Class original = loader.loadClass(className);
         Method[] methods = original.getDeclaredMethods();
-        Object[] newValues = loadOriginalTypesForValues(loader);
+        Method methodToInvoke = findMatchingMethod(methods);
+        return invokeMethod(loader, original, methodToInvoke);
+    }
 
+    private Method findMatchingMethod(Method[] methods) {
         for (Method m : methods) {
             if (nameMatches(methodName, m)) {
-                return m.invoke(original.newInstance(), newValues);
+                return m;
             }
         }
 
         throw new StubException("Original method not found[" + methodName + "]");
+    }
+
+    private Object invokeMethod(ClassLoader loader, Class original,
+                              Method methodToInvoke) throws InstantiationException, IllegalAccessException, ClassNotFoundException, InvocationTargetException {
+        Object[] newValues = loadOriginalTypesForValues(loader);
+        return methodToInvoke.invoke(original.newInstance(), newValues);
     }
 
     private Object[] loadOriginalTypesForValues(ClassLoader loader) throws InstantiationException, IllegalAccessException, ClassNotFoundException {

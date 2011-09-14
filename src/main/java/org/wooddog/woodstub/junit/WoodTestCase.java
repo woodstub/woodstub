@@ -66,7 +66,7 @@ public abstract class WoodTestCase extends TestCase implements StubListener {
      */
     @AfterClass
     public static void tearAllDown() {
-        CodeDirector.clearCache();
+        CodeDirector.cleanUp();
         WoodRunner.cleanup();
         System.gc();
     }

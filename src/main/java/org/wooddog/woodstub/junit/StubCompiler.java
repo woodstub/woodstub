@@ -66,7 +66,7 @@ class StubCompiler {
     }
 
     private void compileStubs(List<Class> stubs) throws IOException, CodeDirectorException {
-        CodeDirector director = CodeDirector.getInstance();
+        CodeDirector director = new CodeDirector();
         for (Class stub : stubs) {
             compiler.addSourceFile(stub.getCanonicalName(), director.buildCode(stub));
         }

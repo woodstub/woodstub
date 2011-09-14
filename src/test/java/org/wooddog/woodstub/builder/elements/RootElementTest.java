@@ -13,9 +13,19 @@ import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.fail;
 
 public class RootElementTest {
+    private static final String SIGNATURE = "/*********************************************************************/\n"+
+            "/***                     Generated with WoodStub(R)                ***/\n"+
+            "/*********************************************************************/\n\n\n";
+
     @Test
     public void testDesign() {
         DesignTester.testCodeElementDesign(MethodDefinitionElement.class);
+    }
+
+    @Test
+    public void testSignature() {
+        String code = new RootElement().getCode();
+        assertEquals(SIGNATURE,code);
     }
 
     @Test

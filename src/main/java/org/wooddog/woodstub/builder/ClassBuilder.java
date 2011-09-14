@@ -17,10 +17,10 @@ class ClassBuilder implements CodeBuilder {
         this.clazz = clazz;
     }
 
-    public CodeElement build(CodeElement subject) {
-        ClassElement element = new ClassElement(new ClassElementFieldKeeper(clazz));
-        subject.addChild(element);
-        return element;
+    public CodeElement build(CodeElement root) {
+        ClassElement classElement = new ClassElement(new ClassElementFieldKeeper(clazz));
+        root.addChild(classElement);
+        return classElement;
     }
 
 

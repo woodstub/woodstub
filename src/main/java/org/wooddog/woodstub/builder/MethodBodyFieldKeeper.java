@@ -9,14 +9,12 @@ package org.wooddog.woodstub.builder;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
 
 public class MethodBodyFieldKeeper {
     private String className;
     private String returnType;
     private boolean primitive;
     private String methodName;
-    private boolean aStatic;
     private Class[] exceptionTypes;
     private String ARG_PREFIX="arg";
 
@@ -25,7 +23,6 @@ public class MethodBodyFieldKeeper {
         returnType=method.getReturnType().getCanonicalName();
         primitive=method.getReturnType().isPrimitive();
         methodName=method.getName();
-        aStatic = Modifier.isStatic(method.getModifiers());
         exceptionTypes = method.getExceptionTypes();
     }
 
@@ -34,7 +31,6 @@ public class MethodBodyFieldKeeper {
         returnType=null;
         primitive=false;
         methodName=method.getName();
-        aStatic = Modifier.isStatic(method.getModifiers());
         exceptionTypes = method.getExceptionTypes();
     }
 
@@ -52,10 +48,6 @@ public class MethodBodyFieldKeeper {
 
     public String getMethodName() {
         return methodName;
-    }
-
-    public boolean isStatic() {
-        return aStatic;
     }
 
     public Class[] getExceptionTypes() {

@@ -25,6 +25,15 @@ public class RootElement extends CodeElement {
         return builder.toString();
     }
 
+    public void addChild(CodeElement e) {
+        if (isValidChild(e)) {
+            super.addChild(e);
+            return;
+        }
+
+        throw new IllegalArgumentException("Only ClassElement or EnumElement can be added to root!");
+    }
+
     private void addSignature(StringBuilder builder) {
         builder.append(SIGNATURE);
         builder.append(newLine);
@@ -37,15 +46,6 @@ public class RootElement extends CodeElement {
             builder.append(child.getCode());
             child = child.getSibling();
         }
-    }
-
-    public void addChild(CodeElement e) {
-        if (isValidChild(e)) {
-            super.addChild(e);
-            return;
-        }
-
-        throw new IllegalArgumentException("Only ClassElement or EnumElement can be added to root!");
     }
 
     private boolean isValidChild(CodeElement e) {

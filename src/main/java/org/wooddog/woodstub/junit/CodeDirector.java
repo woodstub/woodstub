@@ -16,119 +16,136 @@ import org.wooddog.woodstub.builder.elements.RootElement;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * This class directs the building of a Java code file using Builder-implementations.
  */
 class CodeDirector {
+    private BuilderFactory builderFactory;
+    private Class classToCreateFrom;
+    private CodeElement basicClass;
+    private RootElement rootElement;
 
-    private static final int MAX_CLASSES = 50;
-    //Used for saving generated stub-code, so we don't have to generate it several times.
-    private static final Map<Class, String> classes = new HashMap<Class,String>();
-
-    public static CodeDirector getInstance() {
-        return new CodeDirector();
-    }
-
-    private CodeDirector() {
-    }
-
-    public String buildCode(Class clazz) throws CodeDirectorException {
-        if (classes.containsKey(clazz)) {
-            return classes.get(clazz);
-        }
-
-        if (cacheSize()>MAX_CLASSES) {
-            clearCache();
-        }
-
-        RootElement root = new RootElement();
-        buildCodeTree(clazz, root);
-        //Get the code
-        String code = root.getCode();
-        classes.put(clazz,code);
-        return code;
-    }
-
+    /**
+     * Cleans up resources.
+     */
     public static void cleanUp() {
         BuilderFactory.cleanup();
+        ClassCache.clear();
     }
 
-    public static void clearCache() {
-        classes.clear();
+    public CodeDirector() {
+        builderFactory = BuilderFactory.getInstance();
     }
 
-    public static int cacheSize() {
-       return classes.size();
+    /**
+     * Builds the stub-code for a given class.
+     *
+     * @param clazz The class to build stub code from.
+     * @return The stub code.
+     * @throws CodeDirectorException If something goes wrong.
+     */
+    public String buildCode(Class clazz) throws CodeDirectorException {
+        if (ClassCache.contains(clazz)) {
+            return ClassCache.getStub(clazz);
+        }
+
+        return createCodeFromClass(clazz);
     }
 
-    private CodeElement buildCodeTree(Class clazz, RootElement root) throws CodeDirectorException {
-        CodeElement classElement = root;
+    private String createCodeFromClass(Class clazz) {
+        classToCreateFrom = clazz;
+        rootElement = new RootElement();
+        buildCodeTree();
+        return generateCode();
+    }
+
+    private void buildCodeTree() {
         try {
-            classElement = buildBasicClass(clazz, classElement);
-            buildFields(clazz, classElement);
-            buildConstructors(clazz, classElement);
-            buildMethods(clazz, classElement);
+            createTreeOfCodeElements();
         } catch (CodeBuilderException e) {
             throw new CodeDirectorException(e);
         }
-
-        return classElement;
-
     }
 
-    private CodeElement buildBasicClass(Class clazz, CodeElement classElement) {
-        CodeBuilder builder = BuilderFactory.getInstance().createBuilder(clazz);
-        classElement = builder.build(classElement);
-        return classElement;
+    private void createTreeOfCodeElements() {
+        buildBasicClass();
+        buildFields();
+        buildConstructors();
+        buildMethods();
     }
 
-    private void buildFields(Class clazz, CodeElement classElement) {
-        CodeBuilder builder;
-        Field[] fields = clazz.getDeclaredFields();
+    private void buildBasicClass() {
+        basicClass = buildClass();
+    }
+
+    private CodeElement buildClass() {
+        CodeBuilder builder = builderFactory.createBuilder(classToCreateFrom);
+        return builder.build(rootElement);
+    }
+
+    private void buildFields() {
+        Field[] fields = classToCreateFrom.getDeclaredFields();
         for (Field field:fields) {
-            builder = BuilderFactory.getInstance().createBuilder(field);
-            builder.build(classElement);
+            buildField(field);
         }
     }
 
-    private void buildConstructors(Class clazz, CodeElement classElement) {
-        Constructor[] constructors = clazz.getDeclaredConstructors();
-        boolean defaultConstructorNeeded = addAllConstructors(classElement, constructors);
-        addForcedDefaultConstructor(clazz, classElement, defaultConstructorNeeded);
+    private void buildField(Field field) {
+        CodeBuilder builder = builderFactory.createBuilder(field);
+        builder.build(basicClass);
+    }
+
+    private void buildConstructors() {
+        Constructor[] constructors = classToCreateFrom.getDeclaredConstructors();
+        boolean defaultConstructorNeeded = addAllConstructors(basicClass, constructors);
+        addForcedDefaultConstructor(classToCreateFrom, basicClass, defaultConstructorNeeded);
     }
 
     private boolean addAllConstructors(CodeElement classElement, Constructor[] constructors) {
-        CodeBuilder builder;
         boolean defaultConstructorNeeded=true;
         for (Constructor constructor : constructors) {
-            if (constructor.getParameterTypes() == null || constructor.getParameterTypes().length==0) {
+            if (isDefaultConstructor(constructor)) {
                 defaultConstructorNeeded=false;
             }
 
-            builder = BuilderFactory.getInstance().createBuilder(constructor);
-            builder.build(classElement);
+            buildConstructor(classElement, constructor);
         }
 
         return defaultConstructorNeeded;
     }
 
+    private boolean isDefaultConstructor(Constructor constructor) {
+        return constructor.getParameterTypes() == null || constructor.getParameterTypes().length==0;
+    }
+
+    private void buildConstructor(CodeElement classElement, Constructor constructor) {
+        CodeBuilder builder = builderFactory.createBuilder(constructor);
+        builder.build(classElement);
+    }
+
     private void addForcedDefaultConstructor(Class clazz, CodeElement classElement, boolean defaultConstructorNeeded) {
-        CodeBuilder builder;
         if (defaultConstructorNeeded) {
-            builder = BuilderFactory.getInstance().createDefaultConstructorBuilder(clazz);
+            CodeBuilder builder = builderFactory.createDefaultConstructorBuilder(clazz);
             builder.build(classElement);
         }
     }
 
-    private void buildMethods(Class clazz, CodeElement classElement) {
-        CodeBuilder builder;Method[] methods = clazz.getDeclaredMethods();
+    private void buildMethods() {
+        Method[] methods = classToCreateFrom.getDeclaredMethods();
         for (Method method : methods) {
-            builder = BuilderFactory.getInstance().createBuilder(method);
-            builder.build(classElement);
+            buildMethod(method);
         }
     }
 
+    private void buildMethod(Method method) {
+        CodeBuilder builder = builderFactory.createBuilder(method);
+        builder.build(basicClass);
+    }
+
+    private String generateCode() {
+        String code = rootElement.getCode();
+        ClassCache.addStubCode(classToCreateFrom, code);
+        return code;
+    }
 }

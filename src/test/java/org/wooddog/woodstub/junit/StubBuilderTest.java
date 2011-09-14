@@ -16,7 +16,7 @@ import org.wooddog.woodstub.compiler.Compiler;
 public class StubBuilderTest {
     @Test
     public void testCompilation() throws Exception, CodeDirectorException {
-        String source = CodeDirector.getInstance().buildCode(DataBase.class);
+        String source = new CodeDirector().buildCode(DataBase.class);
 
         Compiler compiler = new Compiler();
         compiler.addSourceFile(DataBase.class.getCanonicalName(), source);
