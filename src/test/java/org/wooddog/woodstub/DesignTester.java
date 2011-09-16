@@ -51,7 +51,7 @@ public class DesignTester {
                 Assert.fail("Builder classes must not have setters. ["+met.getName()+"]");
             }
 
-            if (isPublic(met) && met.getName().startsWith("get") && !isGetInstance(met)) {
+            if (isPublic(met) && met.getName().startsWith("get")) {
                 Assert.fail("Builder classes must not have getters. ["+met.getName()+"])");
             }
 
@@ -73,36 +73,19 @@ public class DesignTester {
             Assert.fail("Builder Factory must not implement interfaces.");
         }
 
-        for (Constructor con : factory.getDeclaredConstructors()) {
-            if (Modifier.isPublic(con.getModifiers())) {
-                 Assert.fail("Builder Factory must not have a public constructor");
-            }
-        }
-
         for (Method met : factory.getDeclaredMethods()) {
             if (isPublic(met) && met.getName().startsWith("set")) {
                 Assert.fail("Builder Factory must not have setters.");
             }
 
-            if (isPublic(met) && met.getName().startsWith("get") && !isGetInstance(met)) {
+            if (isPublic(met) && met.getName().startsWith("get")) {
                 Assert.fail("Builder Factory must not have getters.");
             }
 
             if (isPublic(met) && isNotALegalName(met)) {
-                if (isGetInstance(met)) {
-                    if (!Modifier.isStatic(met.getModifiers())) {
-                        Assert.fail("Builder Factory must only have a static getInstance");         
-                    }
-                }
-                else {
-                    Assert.fail("Builder Factory must not have public methods beside createBuilder, like["+met.getName()+"]");
-                }
+                Assert.fail("Builder Factory must not have public methods beside createBuilder, like["+met.getName()+"]");
             }
         }
-    }
-
-    private static boolean isGetInstance(Method met) {
-        return met.getName().equals("getInstance");
     }
 
     private static boolean isPublic(Method met) {

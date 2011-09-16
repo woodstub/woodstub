@@ -12,21 +12,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 public class BuilderFactory {
-    private static BuilderFactory INSTANCE;
-
-    public static BuilderFactory getInstance() {
-        if (INSTANCE==null) {
-            INSTANCE=new BuilderFactory();
-        }
-
-        return INSTANCE;
-    }
-
-    protected BuilderFactory() {
-    }
-
-    public static void cleanup() {
-        INSTANCE=null;
+    public BuilderFactory() {
     }
 
     public CodeBuilder createBuilder(Class clazz) {

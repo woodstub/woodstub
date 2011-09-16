@@ -12,7 +12,7 @@ import org.wooddog.woodstub.builder.elements.EnumElement;
 
 import java.lang.reflect.Modifier;
 
-public class EnumBuilder implements CodeBuilder {
+class EnumBuilder implements CodeBuilder {
     private Class clazz;
 
     EnumBuilder(Class clazz) {

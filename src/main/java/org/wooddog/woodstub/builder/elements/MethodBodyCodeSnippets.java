@@ -7,7 +7,7 @@
 
 package org.wooddog.woodstub.builder.elements;
 
-class MethodBodyCodeSnippets {
+final class MethodBodyCodeSnippets {
     protected static final String STUB_EVENT_CALL = "org.wooddog.woodstub.InternalStubEvent call = new org.wooddog.woodstub.InternalStubEvent(";
     protected static final String NOTIFY_CALL = "\n org.wooddog.woodstub.junit.WoodRunner.notify(call); " +
             "\nif (call.getException() != null) {" +
@@ -25,4 +25,6 @@ class MethodBodyCodeSnippets {
     protected static final String CALL_GET_EXCEPTION = ") call.getException();";
     protected static final String NEW_OBJECT_ARRAY = "new Object[]{";
     protected static final String NULL = "null);";
+
+    private MethodBodyCodeSnippets() {}
 }

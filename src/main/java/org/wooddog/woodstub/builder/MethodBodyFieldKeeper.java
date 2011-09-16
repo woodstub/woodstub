@@ -11,12 +11,12 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
 public class MethodBodyFieldKeeper {
+    private static final String ARG_PREFIX="arg";
     private String className;
     private String returnType;
     private boolean primitive;
     private String methodName;
     private Class[] exceptionTypes;
-    private String ARG_PREFIX="arg";
 
     MethodBodyFieldKeeper(Method method) {
         className=method.getDeclaringClass().getName().replace('$', '.');

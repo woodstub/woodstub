@@ -12,7 +12,7 @@ import org.wooddog.woodstub.builder.elements.DefaultConstructorElement;
 
 import java.lang.reflect.Constructor;
 
-public class DefaultConstructorBuilder implements CodeBuilder {
+class DefaultConstructorBuilder implements CodeBuilder {
 
     private Class clazz;
 

@@ -25,16 +25,16 @@ public class BuilderFactoryTest extends WoodTestCase {
     @Test
     public void testCreation() {
         Class testClass = TestMethodClass.class;
-        Assert.assertTrue(BuilderFactory.getInstance().createBuilder(testClass) instanceof ClassBuilder);
+        Assert.assertTrue(new BuilderFactory().createBuilder(testClass) instanceof ClassBuilder);
 
         Method[] methods = testClass.getDeclaredMethods();
-        Assert.assertTrue(BuilderFactory.getInstance().createBuilder(methods[0]) instanceof MethodBuilder);
+        Assert.assertTrue(new BuilderFactory().createBuilder(methods[0]) instanceof MethodBuilder);
 
         Field[] fields = testClass.getDeclaredFields();
-        Assert.assertTrue(BuilderFactory.getInstance().createBuilder(fields[0]) instanceof FieldBuilder);
+        Assert.assertTrue(new BuilderFactory().createBuilder(fields[0]) instanceof FieldBuilder);
 
         Constructor[] constructors = testClass.getDeclaredConstructors();
-        Assert.assertTrue(BuilderFactory.getInstance().createBuilder(constructors[0]) instanceof ConstructorBuilder);
+        Assert.assertTrue(new BuilderFactory().createBuilder(constructors[0]) instanceof ConstructorBuilder);
     }
 
     @Test

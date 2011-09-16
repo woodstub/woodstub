@@ -30,12 +30,11 @@ class CodeDirector {
      * Cleans up resources.
      */
     public static void cleanUp() {
-        BuilderFactory.cleanup();
         ClassCache.clear();
     }
 
     public CodeDirector() {
-        builderFactory = BuilderFactory.getInstance();
+        builderFactory = new BuilderFactory();
     }
 
     /**
