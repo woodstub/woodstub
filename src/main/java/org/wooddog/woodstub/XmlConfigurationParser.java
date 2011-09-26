@@ -10,7 +10,6 @@ package org.wooddog.woodstub;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -108,16 +107,21 @@ class XmlConfigurationParser {
     }
 
     private void loadFromSystemProperty() {
+        try {
+            loadPropertyFromStream();
+        } catch (SAXException x) {
+            throw new StubException("configuration document " + System.getProperty(systemProperty) + " is not a valid XML document", x);
+        } catch (IOException x) {
+            throw new StubException("unable to load configuration document " + System.getProperty(systemProperty), x);
+        }
+
+    }
+
+    private void loadPropertyFromStream() throws IOException, SAXException {
         String property = System.getProperty(systemProperty);
         if (property != null) {
-            try {
-                InputStream resource = new FileInputStream(property);
-                load(resource);
-            } catch (SAXException x) {
-                throw new StubException("configuration document " + System.getProperty(systemProperty) + " is not a valid XML document", x);
-            } catch (IOException x) {
-                throw new StubException("unable to load configuration document " + System.getProperty(systemProperty), x);
-            }
+            InputStream resource = new FileInputStream(property);
+            load(resource);
         }
     }
 

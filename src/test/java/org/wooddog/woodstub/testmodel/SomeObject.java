@@ -25,4 +25,18 @@ public class SomeObject {
     public void longMethod(long i) {}
     public void floatMethod(float i) {}
     public void doubleMethod(double i) {}
+
+    public int returnIntMethod() {return 0;}
+    public short returnShortMethod() {return 0;}
+    public long returnLongMethod() {return 0;}
+    public float returnFloatMethod() {return 0;}
+    public double returnDoubleMethod() {return 0;}
+
+    public String returnStringMethod() {
+        return "";
+    }
+
+    public ValueClass returnValueObject() {
+        return null;
+    }
 }

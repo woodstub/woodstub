@@ -55,7 +55,7 @@ public class WoodRunnerTest {
 
     @Test
     public void testRemoveListener() {
-         SomeListener listener = new SomeListener();
+        SomeListener listener = new SomeListener();
         WrongListener wrongListener = new WrongListener();
         WoodRunner.addListener(wrongListener);
         WoodRunner.addListener(listener);

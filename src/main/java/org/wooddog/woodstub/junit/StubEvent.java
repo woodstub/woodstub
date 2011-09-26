@@ -110,10 +110,15 @@ public interface StubEvent {
      * Set the result to return.
      * It must match the type returned by the method.
      * If the method is void, the result will be ignored.
-     * @param result
+     * @param result The result to return
      */
     void setResult(Object result);
     Object getResult();
+
+    /**
+     * @return The class for the result type, if any.
+     */
+    Class getReturnType();
 
     /**
      * Sets an exception to raise.

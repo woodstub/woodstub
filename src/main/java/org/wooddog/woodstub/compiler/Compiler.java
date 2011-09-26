@@ -42,9 +42,7 @@ public class Compiler {
             return;
         }
 
-        JavaFileObject object = new MemoryJavaFileObject(className, JavaFileObject.Kind.SOURCE);
-        object.openOutputStream().write(source.getBytes());
-
+        JavaFileObject object = createMemoryFile(className, source);
         sourceFiles.put(className, object);
     }
 
@@ -56,5 +54,11 @@ public class Compiler {
     public void cleanup() {
         manager.cleanup();
         sourceFiles.clear();
+    }
+
+    private JavaFileObject createMemoryFile(String className, String source) throws IOException {
+        JavaFileObject object = new MemoryJavaFileObject(className, JavaFileObject.Kind.SOURCE);
+        object.openOutputStream().write(source.getBytes());
+        return object;
     }
 }

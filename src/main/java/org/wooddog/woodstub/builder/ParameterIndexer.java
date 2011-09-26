@@ -82,6 +82,15 @@ class ParameterIndexer {
         return null;
     }
 
+    private boolean checkForMatch(Class[] sourceTypes, Class[] superTypes) {
+        if (superConstructorHasMoreParameters(sourceTypes, superTypes)) {
+            return false;
+        }
+
+        int matchCount = getNumberOfMatchingTypes(sourceTypes, superTypes);
+        return matchCount == superTypes.length;
+    }
+
     private boolean isPrivateWithNoParameters(Constructor cons) {
         return Modifier.isPrivate(cons.getModifiers()) && cons.getParameterTypes().length == 0;
     }
@@ -133,15 +142,6 @@ class ParameterIndexer {
 
     private int[] failBecauseSuperConstructorCannotBeStubbed() {
         throw new CodeBuilderException("Stubbed class [" + constructor.getName() + "] invoked a super-constructor without matching parameters. To resolve: Create a new constructor.");
-    }
-
-    private boolean checkForMatch(Class[] sourceTypes, Class[] superTypes) {
-        if (superConstructorHasMoreParameters(sourceTypes, superTypes)) {
-            return false;
-        }
-
-        int matchCount = getNumberOfMatchingTypes(sourceTypes, superTypes);
-        return matchCount == superTypes.length;
     }
 
     private int getNumberOfMatchingTypes(Class[] sourceTypes, Class[] superTypes) {

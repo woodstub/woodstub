@@ -7,10 +7,7 @@
 
 package org.wooddog.woodstub.compiler;
 
-import javax.tools.FileObject;
-import javax.tools.ForwardingJavaFileManager;
-import javax.tools.JavaFileObject;
-import javax.tools.StandardJavaFileManager;
+import javax.tools.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
@@ -29,11 +26,7 @@ class MemoryJavaFileManager extends ForwardingJavaFileManager {
     @Override
     public JavaFileObject getJavaFileForOutput(Location location, String className, JavaFileObject.Kind kind,
                                                FileObject sibling) throws IOException {
-        Map<String, MemoryJavaFileObject> files = locations.get(location.getName());
-        if (files == null) {
-            files = new HashMap<String, MemoryJavaFileObject>();
-            locations.put(location.getName(), files);
-        }
+        Map<String, MemoryJavaFileObject> files = getFilesFromLocation(location);
 
         MemoryJavaFileObject object = files.get(className + kind.extension);
         if (object == null) {
@@ -42,6 +35,15 @@ class MemoryJavaFileManager extends ForwardingJavaFileManager {
         }
 
         return object;
+    }
+
+    private Map<String, MemoryJavaFileObject> getFilesFromLocation(Location location) {
+        Map<String, MemoryJavaFileObject> files = locations.get(location.getName());
+        if (files == null) {
+            files = new HashMap<String, MemoryJavaFileObject>();
+            locations.put(location.getName(), files);
+        }
+        return files;
     }
 
 

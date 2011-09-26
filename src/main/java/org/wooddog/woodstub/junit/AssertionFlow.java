@@ -48,15 +48,8 @@ public class AssertionFlow implements StubListener {
             return;
         }
 
-        StubListener listener;
         if (index<assertionList.size()) {
-            listener = assertionList.get(index);
-        }  else {
-            listener=null;
-        }
-
-        if (listener != null) {
-            index ++;
+            StubListener listener = assertionList.get(index++);
             listener.invoked(event);
         }
     }

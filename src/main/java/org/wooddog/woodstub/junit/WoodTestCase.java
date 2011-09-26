@@ -11,10 +11,12 @@ import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.runner.RunWith;
+import org.wooddog.woodstub.StubHelper;
 import org.wooddog.woodstub.assertionpoint.AssertionHead;
 import org.wooddog.woodstub.assertionpoint.AssertionPoint;
 import org.wooddog.woodstub.assertionpoint.AssertionPointCreator;
 import org.wooddog.woodstub.assertionpoint.proxy.ProxyCreator;
+import org.wooddog.woodstub.utilities.ResultBank;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -28,11 +30,13 @@ public abstract class WoodTestCase extends TestCase implements StubListener {
     private List<AssertionPoint> points;
     private boolean invokeAsFlow;
     private int flowIndex = 0;
+    private ResultBank resultBank;
 
     protected WoodTestCase() {
         points = new LinkedList<AssertionPoint>();
         WoodRunner.addListener(this);
         this.invokeAsFlow = false;
+        resultBank = new ResultBank();
     }
 
     /**
@@ -77,6 +81,7 @@ public abstract class WoodTestCase extends TestCase implements StubListener {
     @After
     public void tearDown() {
         cleanUpPoints();
+        resultBank.clearAll();
         System.runFinalization();
     }
 
@@ -85,17 +90,49 @@ public abstract class WoodTestCase extends TestCase implements StubListener {
      */
     public void invoked(StubEvent event) {
         if (invokeAsFlow) {
-            StubListener listener = points.get(flowIndex);
-            flowIndex++;
-            if (flowIndex >= points.size()) {
-                invokeAsFlow = false;
-            }
-            listener.invoked(event);
+            invokePointsAsAssertionFlow(event);
         } else {
-            for (AssertionPoint point : points) {
-                point.invoked(event);
-            }
+            invokePointsWithoutAssertions(event);
         }
+    }
+
+    /**
+     * Adds a return value to the result bank.
+     * @param value The value to use for matching return types.
+     */
+    protected void addValue(Object value) {
+        resultBank.add(value);
+    }
+
+    /**
+     * Adds a new instance of the class as a return value in the result bank.
+     * @param clazz The class to add an instance of.
+     */
+    protected  void addValue(Class clazz) {
+        resultBank.add(StubHelper.newInstance(clazz));
+    }
+
+    /**
+     * Clears all values in the result bank.
+     */
+    protected  void clearValues() {
+        resultBank.clearAll();
+    }
+
+    /**
+     * Delegates all methods from a class to the result bank.
+     * @param clazz The class to auto stub.
+     */
+    protected void autoStub(Class clazz) {
+        behaveAs(clazz).toCallAnyMethod().andDelegateTo(resultBank);
+    }
+
+    /**
+     * Delegates all methods from a class to the result bank.
+     * @param object The object whose type will be auto stubbed.
+     */
+    protected  void autoStub(Object object) {
+        autoStub(object.getClass());
     }
 
     /**
@@ -146,5 +183,20 @@ public abstract class WoodTestCase extends TestCase implements StubListener {
     private AssertionHead addPoint(AssertionHead point) {
         points.add(point);
         return point;
+    }
+
+    private void invokePointsWithoutAssertions(StubEvent event) {
+        for (AssertionPoint point : points) {
+            point.invoked(event);
+        }
+    }
+
+    private void invokePointsAsAssertionFlow(StubEvent event) {
+        StubListener listener = points.get(flowIndex++);
+        if (flowIndex >= points.size()) {
+            invokeAsFlow = false;
+        }
+
+        listener.invoked(event);
     }
 }

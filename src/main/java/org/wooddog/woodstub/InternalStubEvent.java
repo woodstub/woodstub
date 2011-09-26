@@ -16,6 +16,8 @@ public class InternalStubEvent implements StubEvent {
     private Throwable exception;
     private boolean redirectToRealClass;
     private ValueKeeper valueKeeper;
+    private String returnType;
+    private Class returnClass;
 
     /**
      * Should only be constructed through the stub-logic.
@@ -24,7 +26,20 @@ public class InternalStubEvent implements StubEvent {
         this.className = className;
         this.methodName = methodName;
         redirectToRealClass = false;
+        this.returnType = returnType;
         setDefaultReturnValue(returnType);
+        if (result == null) {
+            if (!returnType.equals("null") && !returnType.equals("void") && !returnType.contains("[]") && returnType.trim().length() > 0) {
+                try {
+                    returnClass = Class.forName(returnType);
+                } catch (ClassNotFoundException e) {
+                    throw new StubException("Class not found:" + e.getMessage());
+                }
+            }
+        } else {
+            returnClass = result.getClass();
+        }
+
         initialiseValueKeeper(types, providedValues);
     }
 
@@ -141,6 +156,11 @@ public class InternalStubEvent implements StubEvent {
 
     public Object getResult() {
         return result;
+    }
+
+    @Override
+    public Class getReturnType() {
+        return returnClass;
     }
 
     public void setResult(Object result) {

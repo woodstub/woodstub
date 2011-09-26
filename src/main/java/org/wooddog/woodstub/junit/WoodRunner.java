@@ -20,7 +20,7 @@ public class WoodRunner extends BlockJUnit4ClassRunner {
     private static final List<StubListener> LISTENERS = new LinkedList<StubListener>();
 
     public WoodRunner(Class<?> clazz) throws InitializationError {
-        super(init(clazz));
+        super(new StubCompiler(clazz).compileAndInitialise());
     }
 
     /**
@@ -69,7 +69,7 @@ public class WoodRunner extends BlockJUnit4ClassRunner {
      */
     @Override
     protected void runChild(FrameworkMethod method, RunNotifier notifier) {
-        ClassLoader ccl = getOriginalContextClassLoader();
+        ClassLoader originalClassLoader = getOriginalContextClassLoader();
         changeContextClassLoaderToEndorsed();
 
         try {
@@ -77,12 +77,8 @@ public class WoodRunner extends BlockJUnit4ClassRunner {
         } catch (Exception x) {
             throw new StubException("internal error, please report", x);
         } finally {
-            putBackOriginalClassLoader(ccl);
+            putBackOriginalClassLoader(originalClassLoader);
         }
-    }
-
-    private static Class init(Class<?> clazz) throws InitializationError {
-        return new StubCompiler(clazz).compileAndInitialise();
     }
 
     private static void redirectCallToRealClass(StubEvent event) {

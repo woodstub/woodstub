@@ -78,17 +78,6 @@ public class Primitive {
         addPrimitiveTypeArrayWrappers();
     }
 
-    private static void addPrimitiveTypeArrayWrappers() {
-        WRAPPERS.put(boolean[].class, Boolean[].class);
-        WRAPPERS.put(char[].class, Character[].class);
-        WRAPPERS.put(byte[].class, Byte[].class);
-        WRAPPERS.put(short[].class, Short[].class);
-        WRAPPERS.put(int[].class, Integer[].class);
-        WRAPPERS.put(long[].class, Long[].class);
-        WRAPPERS.put(float[].class, Float[].class);
-        WRAPPERS.put(double[].class, Double[].class);
-    }
-
     private static void addPrimitiveTypeWrappers() {
         WRAPPERS.put(boolean.class, Boolean.class);
         WRAPPERS.put(char.class, Character.class);
@@ -98,6 +87,17 @@ public class Primitive {
         WRAPPERS.put(long.class, Long.class);
         WRAPPERS.put(float.class, Float.class);
         WRAPPERS.put(double.class, Double.class);
+    }
+
+    private static void addPrimitiveTypeArrayWrappers() {
+        WRAPPERS.put(boolean[].class, Boolean[].class);
+        WRAPPERS.put(char[].class, Character[].class);
+        WRAPPERS.put(byte[].class, Byte[].class);
+        WRAPPERS.put(short[].class, Short[].class);
+        WRAPPERS.put(int[].class, Integer[].class);
+        WRAPPERS.put(long[].class, Long[].class);
+        WRAPPERS.put(float[].class, Float[].class);
+        WRAPPERS.put(double[].class, Double[].class);
     }
 
 }

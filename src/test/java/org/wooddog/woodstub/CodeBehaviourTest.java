@@ -135,6 +135,21 @@ public class CodeBehaviourTest extends WoodTestCase {
         behaveAs(ProxyTestInterface.class).toCall("testMethod").andReturn(35);
         ProxyTestInterface test = stub(ProxyTestInterface.class);
         assertEquals(35,test.testMethod("hej"));
+    }
 
+    @Test
+    public void testAutoStub() {
+        addValue(1);
+        addValue(1.0);
+        addValue("test");
+        addValue(TestSingletonClass.class);
+        autoStub(TestSingletonClass.class);
+
+        TestSingletonClass testSingletonClass = TestSingletonClass.getInstance();
+        assertEquals(1,testSingletonClass.getMyInt());
+        assertEquals(1.0,testSingletonClass.getMyDouble());
+        assertEquals("test",testSingletonClass.getMyString());
+        addValue("test2");
+        assertEquals("test2",testSingletonClass.getMyString());
     }
 }
