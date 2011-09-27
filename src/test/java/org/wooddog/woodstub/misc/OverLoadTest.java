@@ -10,6 +10,7 @@ package org.wooddog.woodstub.misc;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.wooddog.woodstub.junit.JUnitWoodRunner;
 import org.wooddog.woodstub.junit.StubEvent;
 import org.wooddog.woodstub.junit.StubListener;
 import org.wooddog.woodstub.junit.WoodRunner;
@@ -19,7 +20,7 @@ import org.wooddog.woodstub.junit.annotation.Stubs;
  * @author Claus Brøndby Reimer (dencbr) / Fujitsu Denmark a|s
  * @version $Revision: $ $Date: $
  */
-@RunWith(WoodRunner.class)
+@RunWith(JUnitWoodRunner.class)
 @Stubs({Head.class})
 public class OverLoadTest {
     /**

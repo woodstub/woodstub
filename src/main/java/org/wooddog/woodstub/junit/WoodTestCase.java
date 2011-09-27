@@ -25,7 +25,7 @@ import java.util.List;
  * Allows the user to add listeners for specific method names,
  * and gives fast access to AssertionPoints and Proxy-creation.
  */
-@RunWith(WoodRunner.class)
+@RunWith(JUnitWoodRunner.class)
 public abstract class WoodTestCase extends TestCase implements StubListener {
     private List<AssertionPoint> points;
     private boolean invokeAsFlow;

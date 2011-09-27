@@ -38,13 +38,16 @@ class DefaultConstructorBuilder implements CodeBuilder {
             return new String[0];
         }
 
+        return copyTypeNamesFromParameters(constructorToUse);
+    }
+
+    private String[] copyTypeNamesFromParameters(Constructor constructorToUse) {
         Class[] types = constructorToUse.getParameterTypes();
         String[] typeNames = new String[types.length];
 
-        int i = 0;
-        for (Class type : types) {
+        for (int i = 0;i<types.length;i++) {
+            Class type = types[i];
             typeNames[i] = type.getSimpleName();
-            i++;
         }
 
         return typeNames;

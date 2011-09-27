@@ -22,13 +22,19 @@ class EnumBuilder implements CodeBuilder {
     @Override
     public CodeElement build(CodeElement subject) throws CodeBuilderException {
         Object[] objs = clazz.getEnumConstants();
+        String[] enumConstants = extractConstantNames(objs);
+
+        EnumElement element = new EnumElement(clazz.getSimpleName(), Modifier.toString(clazz.getModifiers()), clazz.getPackage().getName(), enumConstants);
+        subject.addChild(element);
+        return element;
+    }
+
+    private String[] extractConstantNames(Object[] objs) {
         String[] enumConstants = new String[objs.length];
         for (int i = 0; i < objs.length; i++) {
             enumConstants[i] = objs[i].toString();
         }
 
-        EnumElement element = new EnumElement(clazz.getSimpleName(), Modifier.toString(clazz.getModifiers()), clazz.getPackage().getName(), enumConstants);
-        subject.addChild(element);
-        return element;
+        return enumConstants;
     }
 }

@@ -8,6 +8,7 @@
 package org.wooddog.woodstub;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
@@ -81,11 +82,18 @@ class XmlConfigurationParser {
         ORIG_STUB_LIST.clear();
         for (int i = 0; i < nodeList.getLength(); i++) {
             try {
-                ORIG_STUB_LIST.add(Class.forName(nodeList.item(i).getTextContent().trim()));
+                Node node = nodeList.item(i);
+                addClassFromNode(node);
             } catch (ClassNotFoundException x) {
                 throw new StubException("configuration error, class to stub \"" + nodeList.item(0).getTextContent().trim() + "\" not found in classpath");
             }
         }
+    }
+
+    private void addClassFromNode(Node node) throws ClassNotFoundException {
+        String className = node.getTextContent().trim();
+        Class<?> stubbedClass = Class.forName(className);
+        ORIG_STUB_LIST.add(stubbedClass);
     }
 
     private void loadConfiguration() {

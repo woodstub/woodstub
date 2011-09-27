@@ -9,6 +9,7 @@ package org.wooddog.woodstub;
 
 import org.junit.*;
 import org.junit.runner.RunWith;
+import org.wooddog.woodstub.junit.JUnitWoodRunner;
 import org.wooddog.woodstub.junit.StubEvent;
 import org.wooddog.woodstub.junit.StubListener;
 import org.wooddog.woodstub.junit.WoodRunner;
@@ -17,7 +18,7 @@ import org.wooddog.woodstub.testmodel.SomeObject;
 import static org.junit.Assert.assertTrue;
 
 @Stubs(SomeObject.class)
-@RunWith (WoodRunner.class)
+@RunWith (JUnitWoodRunner.class)
 public class WoodRunnerTest {
     private static ClassLoader beforeClassClassLoader;
     private ClassLoader beforeClassLoader;

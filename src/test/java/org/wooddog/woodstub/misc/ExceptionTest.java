@@ -12,6 +12,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.wooddog.woodstub.StubException;
+import org.wooddog.woodstub.junit.JUnitWoodRunner;
 import org.wooddog.woodstub.junit.StubEvent;
 import org.wooddog.woodstub.junit.StubListener;
 import org.wooddog.woodstub.junit.WoodRunner;
@@ -23,7 +24,7 @@ import java.io.IOException;
  * @author Claus Brøndby Reimer (dencbr) / Fujitsu Denmark a|s
  * @version $Revision: $ $Date: $
  */
-@RunWith(WoodRunner.class)
+@RunWith(JUnitWoodRunner.class)
 @Stubs(DummyClass.class)
 public class ExceptionTest {
     @After
@@ -36,9 +37,7 @@ public class ExceptionTest {
      */
     @Test
     public void testMethodCheckedException() {
-        DummyClass dummyClass;
-
-        dummyClass = new DummyClass();
+        DummyClass dummyClass = new DummyClass();
 
         WoodRunner.addListener(new StubListener() {
             @Override

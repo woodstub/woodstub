@@ -11,6 +11,7 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.wooddog.woodstub.junit.JUnitWoodRunner;
 import org.wooddog.woodstub.junit.StubEvent;
 import org.wooddog.woodstub.junit.StubListener;
 import org.wooddog.woodstub.junit.WoodRunner;
@@ -31,7 +32,7 @@ import org.wooddog.woodstub.junit.annotation.Stubs;
  *  Check primitives do not cause cast exceptions when no return value is set in the listener.
  *
  */
-@RunWith(WoodRunner.class)
+@RunWith(JUnitWoodRunner.class)
 @Stubs(DataType.class)
 public class DataTypeTest {
     private int calls;

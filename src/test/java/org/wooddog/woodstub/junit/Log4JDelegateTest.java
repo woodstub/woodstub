@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
 import org.wooddog.woodstub.junit.annotation.Stubs;
 
 @Ignore
-@RunWith(WoodRunner.class)
+@RunWith(JUnitWoodRunner.class)
 @Stubs(Logger.class)
 // suffers by issue WOODSTUB-15       
 public class Log4JDelegateTest {

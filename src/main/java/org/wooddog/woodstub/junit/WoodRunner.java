@@ -7,20 +7,15 @@
 
 package org.wooddog.woodstub.junit;
 
-import org.junit.runner.notification.RunNotifier;
-import org.junit.runners.BlockJUnit4ClassRunner;
-import org.junit.runners.model.FrameworkMethod;
-import org.junit.runners.model.InitializationError;
-import org.wooddog.woodstub.*;
-
+import org.wooddog.woodstub.ClassLoaderWrapper;
+import org.wooddog.woodstub.Config;
 import java.util.LinkedList;
 import java.util.List;
 
-public class WoodRunner extends BlockJUnit4ClassRunner {
+public class WoodRunner {
     private static final List<StubListener> LISTENERS = new LinkedList<StubListener>();
 
-    public WoodRunner(Class<?> clazz) throws InitializationError {
-        super(new StubCompiler(clazz).compileAndInitialise());
+    private WoodRunner() {
     }
 
     /**
@@ -64,38 +59,9 @@ public class WoodRunner extends BlockJUnit4ClassRunner {
         }
     }
 
-    /**
-     * JUnit method. Not to be invoked manually.
-     */
-    @Override
-    protected void runChild(FrameworkMethod method, RunNotifier notifier) {
-        ClassLoader originalClassLoader = getOriginalContextClassLoader();
-        changeContextClassLoaderToEndorsed();
-
-        try {
-            super.runChild(method, notifier);
-        } catch (Exception x) {
-            throw new StubException("internal error, please report", x);
-        } finally {
-            putBackOriginalClassLoader(originalClassLoader);
-        }
-    }
-
     private static void redirectCallToRealClass(StubEvent event) {
         Object result = new OriginalInvoker(event).invoke();
         event.setResult(result);
-    }
-
-    private ClassLoader getOriginalContextClassLoader() {
-        return Thread.currentThread().getContextClassLoader();
-    }
-
-    private void changeContextClassLoaderToEndorsed() {
-        Thread.currentThread().setContextClassLoader(getTestClass().getJavaClass().getClassLoader());
-    }
-
-    private void putBackOriginalClassLoader(ClassLoader ccl) {
-        Thread.currentThread().setContextClassLoader(ccl);
     }
 
 }

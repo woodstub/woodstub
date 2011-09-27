@@ -11,10 +11,7 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.wooddog.woodstub.junit.AssertionFlow;
-import org.wooddog.woodstub.junit.StubEvent;
-import org.wooddog.woodstub.junit.StubListener;
-import org.wooddog.woodstub.junit.WoodRunner;
+import org.wooddog.woodstub.junit.*;
 import org.wooddog.woodstub.junit.annotation.Stubs;
 
 /**
@@ -26,7 +23,7 @@ import org.wooddog.woodstub.junit.annotation.Stubs;
  * @author Claus Brøndby Reimer (dencbr) / Fujitsu Denmark a|s
  * @version $Revision: $ $Date: $
  */
-@RunWith(WoodRunner.class)
+@RunWith(JUnitWoodRunner.class)
 @Stubs({Implementer.class})
 public class InterfaceTest {
     @After

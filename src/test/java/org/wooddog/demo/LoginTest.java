@@ -15,7 +15,7 @@ import org.wooddog.woodstub.junit.*;
 import org.wooddog.woodstub.junit.annotation.Stubs;
 
 // TODO: clean up this class
-@RunWith(WoodRunner.class)
+@RunWith(JUnitWoodRunner.class)
 @Stubs(DataBase.class)
 public class LoginTest {
 

@@ -16,7 +16,7 @@ import org.wooddog.woodstub.testmodel.SomeObject;
 public class AssertionProxyTest extends WoodTestCase {
 
     @Test
-    public void testConstruction() {
+    public void testInterfaceConstruction() {
         ProxyTestInterface test =  stub(ProxyTestInterface.class);
         assertNotNull(test);
     }
