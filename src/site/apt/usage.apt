@@ -285,7 +285,7 @@ public class LoginTest {
 
 +---
   <woodstub>
-    <stub-builder>org.wooddog.woodstub.builder.BuilderFactory</stub-builder>
+    <stub-builder>org.wooddog.woodstub.generator.builder.BuilderFactory</stub-builder>
     <excludes>
         <exclude>org.apache.log4j\..*</exclude>
     </excludes>

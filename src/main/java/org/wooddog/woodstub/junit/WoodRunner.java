@@ -9,6 +9,7 @@ package org.wooddog.woodstub.junit;
 
 import org.wooddog.woodstub.ClassLoaderWrapper;
 import org.wooddog.woodstub.Config;
+import org.wooddog.woodstub.generator.CodeDirector;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -47,7 +48,7 @@ public class WoodRunner {
 
     /**
      * Part of the callback logic. Not to be invoked manually.
-     * @param event
+     * @param event The event to notify with
      */
     public static void notify(StubEvent event) {
         for (StubListener listener : LISTENERS) {

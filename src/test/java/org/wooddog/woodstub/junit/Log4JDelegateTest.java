@@ -33,7 +33,7 @@ public class Log4JDelegateTest {
         LOG.error("Hello World");
     }
 
-    public static void main(String[] args) throws CodeDirectorException {
+    public static void main(String[] args)  {
         
     }
 }

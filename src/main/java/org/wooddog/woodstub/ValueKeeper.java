@@ -28,10 +28,50 @@ class ValueKeeper {
     private Class[] parameters;
     private Object[] valuesToKeep;
 
-    public ValueKeeper(Class[] types) {
+    ValueKeeper(Class[] types) {
         this.parameters = types;
         giveParameterValuesDefaultLength();
         initialisePrimitives(parameters);
+    }
+
+    void loadValuesFromArray(Object[] providedValues) {
+        setValuesFromProvidedArray(providedValues);
+    }
+
+    boolean getBoolean(int parameterIndex) {
+        return booleans[getArrayIndex(boolean.class, parameterIndex)];
+    }
+
+    char getChar(int parameterIndex) {
+        return chars[getArrayIndex(char.class, parameterIndex)];
+    }
+
+    byte getByte(int parameterIndex) {
+        return bytes[getArrayIndex(byte.class, parameterIndex)];
+    }
+
+    short getShort(int parameterIndex) {
+        return shorts[getArrayIndex(short.class, parameterIndex)];
+    }
+
+    int getInt(int parameterIndex) {
+        return ints[getArrayIndex(int.class, parameterIndex)];
+    }
+
+    long getLong(int parameterIndex) {
+        return longs[getArrayIndex(long.class, parameterIndex)];
+    }
+
+    float getFloat(int parameterIndex) {
+        return floats[getArrayIndex(float.class, parameterIndex)];
+    }
+
+    double getDouble(int parameterIndex) {
+        return doubles[getArrayIndex(double.class, parameterIndex)];
+    }
+
+    Object getObject(int parameterIndex) {
+        return valuesToKeep[parameterIndex - 1];
     }
 
     private void giveParameterValuesDefaultLength() {
@@ -40,46 +80,6 @@ class ValueKeeper {
         } else {
             valuesToKeep = new Object[0];
         }
-    }
-
-    public void loadValuesFromArray(Object[] providedValues) {
-        setValuesFromProvidedArray(providedValues);
-    }
-
-    public boolean getBoolean(int parameterIndex) {
-        return booleans[getArrayIndex(boolean.class, parameterIndex)];
-    }
-
-    public char getChar(int parameterIndex) {
-        return chars[getArrayIndex(char.class, parameterIndex)];
-    }
-
-    public byte getByte(int parameterIndex) {
-        return bytes[getArrayIndex(byte.class, parameterIndex)];
-    }
-
-    public short getShort(int parameterIndex) {
-        return shorts[getArrayIndex(short.class, parameterIndex)];
-    }
-
-    public int getInt(int parameterIndex) {
-        return ints[getArrayIndex(int.class, parameterIndex)];
-    }
-
-    public long getLong(int parameterIndex) {
-        return longs[getArrayIndex(long.class, parameterIndex)];
-    }
-
-    public float getFloat(int parameterIndex) {
-        return floats[getArrayIndex(float.class, parameterIndex)];
-    }
-
-    public double getDouble(int parameterIndex) {
-        return doubles[getArrayIndex(double.class, parameterIndex)];
-    }
-
-    public Object getObject(int parameterIndex) {
-        return valuesToKeep[parameterIndex - 1];
     }
 
     private void initialisePrimitives(Class[] types) {

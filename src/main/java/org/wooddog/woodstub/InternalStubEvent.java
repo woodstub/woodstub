@@ -16,7 +16,6 @@ public class InternalStubEvent implements StubEvent {
     private Throwable exception;
     private boolean redirectToRealClass;
     private ValueKeeper valueKeeper;
-    private String returnType;
     private Class returnClass;
 
     /**
@@ -26,8 +25,12 @@ public class InternalStubEvent implements StubEvent {
         this.className = className;
         this.methodName = methodName;
         redirectToRealClass = false;
-        this.returnType = returnType;
         setDefaultReturnValue(returnType);
+        determineResultClass(returnType);
+        initialiseValueKeeper(types, providedValues);
+    }
+
+    private void determineResultClass(String returnType) {
         if (result == null) {
             if (!returnType.equals("null") && !returnType.equals("void") && !returnType.contains("[]") && returnType.trim().length() > 0) {
                 try {
@@ -39,8 +42,6 @@ public class InternalStubEvent implements StubEvent {
         } else {
             returnClass = result.getClass();
         }
-
-        initialiseValueKeeper(types, providedValues);
     }
 
     /**

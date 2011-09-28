@@ -8,9 +8,7 @@
 package org.wooddog.woodstub;
 
 import org.junit.Assert;
-import org.wooddog.woodstub.builder.elements.CodeElement;
-
-import java.lang.reflect.Constructor;
+import org.wooddog.woodstub.generator.builder.elements.CodeElement;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
@@ -38,12 +36,6 @@ public class DesignTester {
         Class superClass = builder.getSuperclass();
         if (!superClass.getCanonicalName().endsWith(".Object")) {
             Assert.fail("Builder classes must not extend from classes. In this case["+superClass.getCanonicalName()+"]");
-        }
-
-        for (Constructor constructor: builder.getDeclaredConstructors()) {
-            if (Modifier.isPublic(constructor.getModifiers())) {
-                Assert.fail("Builder classes must not have public constructors.");
-            }
         }
 
          for (Method met : builder.getDeclaredMethods()) {

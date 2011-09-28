@@ -11,8 +11,11 @@ import org.junit.runner.notification.RunNotifier;
 import org.junit.runners.BlockJUnit4ClassRunner;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.InitializationError;
+import org.wooddog.woodstub.hookup.ClassLoaderKeeper;
+import org.wooddog.woodstub.hookup.ClassLoaderListener;
+import org.wooddog.woodstub.hookup.StubCompiler;
 
-public class JUnitWoodRunner extends BlockJUnit4ClassRunner implements ClassLoaderListener{
+public class JUnitWoodRunner extends BlockJUnit4ClassRunner implements ClassLoaderListener {
     private FrameworkMethod method;
     private RunNotifier notifier;
 

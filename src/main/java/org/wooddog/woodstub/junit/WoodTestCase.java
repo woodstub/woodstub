@@ -16,6 +16,7 @@ import org.wooddog.woodstub.assertionpoint.AssertionHead;
 import org.wooddog.woodstub.assertionpoint.AssertionPoint;
 import org.wooddog.woodstub.assertionpoint.AssertionPointCreator;
 import org.wooddog.woodstub.assertionpoint.proxy.ProxyCreator;
+import org.wooddog.woodstub.generator.CodeDirector;
 import org.wooddog.woodstub.utilities.ResultBank;
 import java.util.LinkedList;
 import java.util.List;

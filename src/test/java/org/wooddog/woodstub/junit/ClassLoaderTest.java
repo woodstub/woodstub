@@ -13,6 +13,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.wooddog.demo.DataBase;
 import org.wooddog.demo.LoginBean;
+import org.wooddog.woodstub.generator.CodeDirector;
 import org.wooddog.woodstub.junit.annotation.Stubs;
 
 @Stubs(DataBase.class)

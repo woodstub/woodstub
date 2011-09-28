@@ -11,11 +11,12 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.wooddog.demo.DataBase;
 import org.wooddog.woodstub.compiler.Compiler;
+import org.wooddog.woodstub.generator.CodeDirector;
 
 
 public class StubBuilderTest {
     @Test
-    public void testCompilation() throws Exception, CodeDirectorException {
+    public void testCompilation() throws Exception {
         String source = new CodeDirector().buildCode(DataBase.class);
 
         Compiler compiler = new Compiler();
